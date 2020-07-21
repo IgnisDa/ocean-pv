@@ -41,9 +41,6 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.SUCCESS('Finished collecting scores'))
 
-        for subclass, score_list in scores.items():
-            score_list.sort()
-
         # Object is created here
         GlobalAverages.objects.create(
             openness=scores['openness'],

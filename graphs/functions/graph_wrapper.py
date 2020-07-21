@@ -35,11 +35,11 @@ def return_descriptions(valid_dict: list) -> tuple:
         json_data = json.load(f)
 
     averages = GlobalAverages.objects.latest()
-    openness = averages.openness
-    conscientiousness = averages.conscientiousness
-    extraversion = averages.extraversion
-    agreeableness = averages.agreeableness
-    neuroticism = averages.neuroticism
+    openness = sorted(averages.openness)
+    conscientiousness = sorted(averages.conscientiousness)
+    extraversion = sorted(averages.extraversion)
+    agreeableness = sorted(averages.agreeableness)
+    neuroticism = sorted(averages.neuroticism)
 
     global_scores = {
         'openness': openness, 'conscientiousness': conscientiousness,
