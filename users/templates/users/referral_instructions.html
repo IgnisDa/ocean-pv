@@ -1,0 +1,33 @@
+{% extends 'user_base.html' %}
+
+{% block user_action_title %}
+New Referral
+{% endblock %}
+
+{% block user_action %}
+Referral Link detected
+{% endblock %}
+
+{% block forgot_password %}
+{% csrf_token %}
+<div style="text-align: center;">
+    <p style="color: floralwhite;">
+        Looks like you have come here on a friend's recommendation. Thank you very much!
+        <br /><br />
+        You need to have a valid account with us to attempt this test, and compare your personality
+        with a peer. You can either <b class="text-warning">LOGIN</b> (if you already have an account),
+        or <b class="text-success">REGISTER</b> a new one by clicking below.
+        <br /><br />
+        After having logged in with a new or existing account, click on 
+        <b class="text-info">Sent here by a peer?</b> on the homepage and then
+        enter the <em>Referral Code</em> that your peer sent you.
+    </p>
+</div>
+<div class="btn-toolbar mt-4">
+    <a href="{% url 'users:login' %}" class="btn btn-warning">Login </a>
+    <a href="{% url 'users:register' %}" class="btn btn-success ml-auto">Register </a>
+</div>
+<div class="p-t-10">
+    <a href="{% url 'home:home' %}" class="btn btn-block btn-danger">Homepage </a>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+[
+    {
+        "subclass": "openness",
+        "descriptions": {
+            "high": "You're curious, and have a wide range of interests. You are also strong and independent. You are open to trying out new ideas and put them into action as soon as possible.",
+            "low": "You have a specific routine that you prefer to follow. You are practical and think ideas out before putting them to action. You like to play by the rules and conventions, and prefer that others follow those rules too."
+        }
+    },
+    {
+        "subclass": "conscientiousness",
+        "descriptions": {
+            "high": "You are hardworking and prefer to complete your work before leaving it unfinished. You work well with teams due to your dependability and team spirit. You are also organized and work better in an environment without material distraction or any kind of background noise like loud music or city traffic.",
+            "low": "You are quite impulsive, and work on whims a lot. You are careless and keep losing stuff. Being disorganized is one of your traits. Your working environment is mostly disorganized and you work better if there's some kind of background noise, be it soft music or the city traffic."
+        }
+    },
+    {
+        "subclass": "extraversion",
+        "descriptions": {
+            "high": "This means that you are quite outgoing, warm with people, and good at dealing with people and generally a blast to spend time with. You seek adventure quite often and invite others to join you too (whether they want to or not). You don't like staying alone and thrive around people. Regular human interactions is essential for you. You are the center of attraction in parties.",
+            "low": "You like to spend time alone, preferably with your favorite movie or a good ol' book, and a cup of coffee. You're quite reserved in person and speak up only when spoken to or when you really need to (sometimes not even then). You would much rather listen to people speak than do it yourself. People would describe you as withdrawn. Social gatherings tire you out, and you need time to recharge before your next social venture."
+        }
+    },
+    {
+        "subclass": "agreeableness",
+        "descriptions": {
+            "high": "You have a highly agreeable personality. You like helping others and compassion is one of your strong points. You trust others easily and soon. Sometimes this gets you into trouble but it mostly makes you a nice person to spend time with. You are very empathetic and like listening to people's problems and offer solutions when asked. People like your company.",
+            "low": "You are quite critical, about the world and life in general. You are a suspicious person, not easy to please and even more difficult to work with. Team work is not your strong point and you can uncooperative sometimes. You like to work by the tried and tested ways and averse to trying something new."
+        }
+    },
+    {
+        "subclass": "neuroticism",
+        "descriptions": {
+            "high": "You become anxious often and easily. You are unhappy a lot and prone to negative emotions. You might even have experienced mental conditions like severe anxiety or depression sometime. You sometimes panic while handling difficult situations. While being high or low in others doesn't really mean all that much, scientists have found that being high in neuroticism generally means a difficult life. However, no personality is quite concrete and one can slide to being low in neuroticism anytime (and vice-versa).",
+            "low": "You are a calm individual, and adept at handling difficult situations. You also happen to be even tempered and survey the situation carefully, before having an adverse reaction. You are also quite confident in your skin. You don't feel insecure often and even when you do, yiu get over it quickly and revert to your original composure."
+        }
+    }
+]

@@ -1,0 +1,60 @@
+{% if is_paginated %}
+<div class="gtco-container text-center mt-5">
+    <div class="animate-box bg-dark rounded">
+
+        <div class="row">
+            {% if page_obj.has_previous %}
+            <div class="col">
+                <a href="?page=1">
+                    <span class="icon">
+                        <i class="icon-controller-fast-backward"></i>
+                    </span>
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="?page={{ page_obj.previous_page_number }}">
+                    <span class="icon">
+                        <i class="icon-skip-back"></i>
+                    </span>
+                </a>
+            </div>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <div class="col">
+                <a href="?page={{ num }}"><strong class="text-warning">{{ num }}</strong></a>
+            </div>
+            {% elif num > page_obj.num|add:'-3' and num < page_obj.num|add:'3' %}
+            <div class="col">
+                <a href="?page={{ page_obj.previous_page_number }}">
+                    <strong class="text-primary">{{ num }}</strong>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <div class="col">
+                <a href="?page={{ page_obj.next_page_number }}">
+                    <span class="icon">
+                        <i class="icon-skip-forward"></i>
+                    </span>
+                </a>
+            </div>
+            <div class="col">
+                <a href="?page={{ page_obj.paginator.num_pages }}">
+                    <span class="icon">
+                        <i class="icon-controller-fast-forward"></i>
+                    </span>
+                </a>
+            </div>
+            {% endif %}
+
+        </div>
+
+
+    </div>
+</div>
+{% endif %}

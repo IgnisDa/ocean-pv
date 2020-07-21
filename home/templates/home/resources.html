@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!--================Home Banner Area =================-->
+{% block banner_text %}
+<h1>Resources Used </h1>
+<h2>A list of all the resources used for the completion of this project </h2>
+{% endblock %}
+<!--===Home banner area===-->
+
+{% block body %}
+<div class="gtco-container">
+
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <h3>Text editors</h3>
+            <p>Visual Studio Code <a href="https://github.com/microsoft/vscode" target="_blank"><span class="icon"><i
+                            class="icon-share"></i></span></a></p>
+            <p>Brackets Text Editor <a href="https://github.com/adobe/brackets" target="_blank"><span class="icon"><i
+                            class="icon-share"></i></span></a></p>
+            <p>Vim Text Editor <a href="https://github.com/vim/vim" target="_blank"><span class="icon"><i
+                            class="icon-share"></i></span></a></p>
+        </div>
+    </div>
+
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <h3>Miscellaneous </h3>
+            <p>Positive Psychology <a href="https://positivepsychology.com/big-five-personality-theory/"
+                    target="_blank"><span class="icon"><i class="icon-share"></i></span></a></p>
+            <p>Big Five Inventory <a
+                    href="http://fetzer.org/sites/default/files/images/stories/pdf/selfmeasures/Personality-BigFiveInventory.pdf"
+                    target="_blank"><span class="icon"><i class="icon-share"></i></span></a></p>
+            <p>Science of People <a href="https://www.scienceofpeople.com/personality/" target="_blank"><span
+                        class="icon"><i class="icon-share"></i></span></a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

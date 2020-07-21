@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block banner_text %}
+<h1>Questions</h1>
+{% endblock %}
+{% load widget_tweaks %}
+{% load custom_filters %}
+
+{% block body %}
+<div class="gtco-container">
+
+    <div class="animate-box">
+        <div class="col-md-offset-2">
+            <form method="POST" class="post-form">
+                {% csrf_token %}
+                {{ form.management_form }}
+                <table class="table table-striped table-bordered">
+                    <tbody>
+                        {% for field, question in form|zip_lists:questions %}
+                        <div class="form-group">
+                            <tr>
+                                <td>
+                                    <label for="{{ field.id_for_label }}">
+                                        {{ forloop.counter }})
+                                        {{ question.text }}
+                                    </label></td>
+                                <td>{% if not field.answer_choice.errors %}
+                                    {{ field.answer_choice }}
+                                    {% else %}
+                                    {{ field.answer_choice|add_class:'is-invalid' }}
+                                    {% endif %}
+                                    <div class="mt-2">
+                                        <small id="id_errors" class="text-danger">
+                                            {{ field.answer_choice.errors }}
+                                        </small>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <div class="text-center">
+                    <button href="{% url 'interactions:taketest' %}" class="btn-success btn-block" type="submit">Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

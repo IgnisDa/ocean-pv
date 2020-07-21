@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!--================Home Banner Area =================-->
+{% block banner_text %}
+<h1>Thank you! </h1>
+
+{% endblock %}
+<!--===Home banner area===-->
+
+{% block body %}
+<div class="gtco-container">
+
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <h2>
+                Thank you for contacting us!
+                Your contact form has been submitted and will be processed soon. You can expect a reply shortly!
+            </h2>
+            <a href="{% url 'home:home' %}" class="btn btn-danger text-center">
+                Homepage
+            </a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

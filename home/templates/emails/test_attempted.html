@@ -1,0 +1,15 @@
+{% extends 'emails/email_base.html' %}
+
+{% block preview %}
+    {% block title %}   
+        Your peer {{ user_name }} tried to guess your personality!
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+    <strong>{{ user_name }}</strong> tried to guess your personality. Want to know how accurate 
+    they were? Visit {{ website_address }} to see some pretty graphs describing 
+    their test and then rate their accuracy. And while you are there, you can attempt a test guessing 
+    <strong>{{ user_name }}</strong> personality. Or maybe, why don't you 
+    attempt another test to see how much your own personality changed from the last time?
+{% endblock %}

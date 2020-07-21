@@ -1,0 +1,222 @@
+[
+    {
+        "subclass": "openness",
+        "text": "Has few artistic interests",
+        "factor": "-1"
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Can be somewhat careless",
+        "factor": "-1"
+    },
+    {
+        "subclass": "openness",
+        "text": "Is ingenious, a deep thinker",
+        "factor": "1"
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Is talkative",
+        "factor": "1"
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Is generally trusting",
+        "factor": "1"
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Likes to cooperate with other",
+        "factor": "1"
+    },
+    {
+        "subclass": "openness",
+        "text": "Is inventive",
+        "factor": "1"
+    },
+    {
+        "subclass": "openness",
+        "text": "Is sophisticated in art, music, or literature",
+        "factor": "1"
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Tends to find fault with others",
+        "factor": "-1"
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Does things efficiently",
+        "factor": "1"
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Is sometimes rude to others",
+        "factor": "-1"
+    },
+    {
+        "subclass": "openness",
+        "text": "Values artistic, aesthetic experiences",
+        "factor": "1"
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Can be cold and aloof",
+        "factor": "-1"
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Is helpful and unselfish with others",
+        "factor": "1"
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Is outgoing, sociable",
+        "factor": "1"
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Is a reliable worker",
+        "factor": "1"
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Is full of energy",
+        "factor": "1"
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Is relaxed, handles stress well",
+        "factor": "-1"
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Is depressed, blue",
+        "factor": "1"
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Is easily distracted",
+        "factor": "-1"
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Tends to be disorganized",
+        "factor": "-1"
+    },
+    {
+        "subclass": "openness",
+        "text": "Is original, comes up with new ideas",
+        "factor": "1"
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Has an assertive personality",
+        "factor": "1"
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Starts quarrels with others",
+        "factor": "-1"
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Gets nervous easily",
+        "factor": "1"
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Remains calm in tense situations",
+        "factor": "-1"
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Worries a lot",
+        "factor": "1"
+    },
+    {
+        "subclass": "openness",
+        "text": "Likes to reflect, play with ideas",
+        "factor": "1"
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Has a forgiving nature",
+        "factor": "1"
+    },
+    {
+        "subclass": "openness",
+        "text": "Is curious about many different things",
+        "factor": "1"
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Perseveres until the task is finished",
+        "factor": "1"
+    },
+    {
+        "subclass": "openness",
+        "text": "Prefers work that is routine",
+        "factor": "-1"
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Can be moody",
+        "factor": "1"
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Does a thorough job",
+        "factor": "1"
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Is sometimes shy, inhibited",
+        "factor": "-1"
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Is considerate and kind to almost everyone",
+        "factor": "1"
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Tends to be lazy",
+        "factor": "-1"
+    },
+    {
+        "subclass": "openness",
+        "text": "Has an active imagination",
+        "factor": "1"
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Is reserved",
+        "factor": "-1"
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Can be tense",
+        "factor": "1"
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Generates a lot of enthusiasm",
+        "factor": "1"
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Makes plans and follows through with them",
+        "factor": "1"
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Is emotionally stable, not easily upset",
+        "factor": "-1"
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Tends to be quiet",
+        "factor": "-1"
+    }
+]

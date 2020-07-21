@@ -1,0 +1,32 @@
+{% extends 'emails/email_base.html' %}
+
+{% block title %}
+    {% block preview %}
+        Your password reset from {{ domain }}
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %}Someone, hopefully you, has requested a password reset for your {{ site_name }} account.
+{% endblocktrans %}
+
+{% trans "Please go to the following page and choose a new password:" %}
+{% block reset_link %}
+{{ protocol }}://{{ domain }}{% url 'users:password-reset-confirm' uidb64=uid token=token %}
+{% endblock %}
+
+{% blocktrans %}
+    If you don't wish to reset your password, disregard this email and no action will be taken.
+{% endblocktrans %}
+
+<br/><br/>
+{% trans 'We recommend that you keep your password secure and not share it with anyone. If you feel your password has been compromised, you can change it by going to your profile page and clicking on the <strong>Change Password</strong> link: ' %}
+{{ protocol }}://{{ domain }}{% url 'users:profile' username=user.get_username %}
+<br/><br/>
+{% trans 'If you need help, or you have any other questions, feel free to email us using our contact page' %}
+{{ protocol }}://{{ domain }}{% url 'home:contact' %}
+
+{% endautoescape %}
+{% endblock %}

@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% load static %}
+<!--================Home Banner Area =================-->
+{% block banner_text %}
+<h1>How this works</h1>
+<h2>Here's what to do</h2>
+{% endblock %}
+<!--===Home banner area===-->
+{% block body %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block instructions %}
+<div class="gtco-container">
+
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <div id="gtco-testimonial">
+                <div class="gtco-container">
+
+                    <div class="animate-box">
+                        <div class="owl-carousel owl-carousel-fullwidth ">
+                            <div class="item">
+                                <div class="testimony-slide2 active text-center">
+                                    <figure>
+                                        <img src="{% static 'interactions/images/enter_username.png' %}" alt="user">
+                                    </figure>
+                                    <span><strong>Step 1: Enter your peer's username</strong></span>
+                                    <blockquote>
+                                        <p>First, enter your peer's username (the one they used to register). Click
+                                            on <em class="text-danger">Submit</em> to get all usernames which match
+                                            your search. Note that their profile <a
+                                                href="{% url 'users:profile-update' username=user.username %}#div_id_visible">visibility</a>
+                                            must be set to <em class="text-danger">Yes</em> for them to appear in
+                                            this list. They should also have attempted at least one test.
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimony-slide2 active text-center">
+                                    <figure>
+                                        <img src="{% static 'interactions/images/user_table.png' %}" alt="user">
+                                    </figure>
+                                    <span><strong>Step 2: Find your peer's profile</strong></span>
+                                    <blockquote>
+                                        <p>Along with the username, their first name and last name is also
+                                            provided to
+                                            make it easier for you to identify them. Once you have identified them,
+                                            click on <em class="text-danger">Select This</em>.</p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimony-slide2 active text-center">
+                                    <figure>
+                                        <img src="{% static 'interactions/images/selfanswer_list.png' %}">
+                                    </figure>
+                                    <span><strong>Step 3: Select the Test ID which you would like to attempt
+                                            for</strong></span>
+                                    <blockquote>
+                                        <p>On clicking <em class="text-danger">Select This</em>, you will be
+                                            redirected to a page where you can select which Test ID you would like
+                                            to attempt the test against. This will be used to calculate your
+                                            accuracy in guessing your peer's personality. You can also <em
+                                                class="text-danger">Preview</em> their
+                                            test attempt before attempting. When ready, click on <em
+                                                class="text-danger">Take test</em> and you will be directed to the
+                                            survey page.</p>
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block form %}
+<div class="gtco-container">
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <form method="post" data-validate-username-url="{% url 'interactions:howto-relations-ajax' %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-success btn-block" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="gtco-container" id="fetch_random_user" fetch-random-user-url="{% url 'interactions:random-user' %}">
+    <div class="animate-box" style="text-align: center;">
+        <button class="btn btn-warning" onclick="fetch_random_user()">Random User</button>
+    </div>
+</div>
+
+{% if queryset.0|length != 0 %}
+<div id="gtco-table">
+    <div class="gtco-container">
+        <div class="animate-box">
+            <div class="col-md-offset-2 text-center gtco-heading">
+                <table class="table table-striped table-bordered table-sm">
+                    <thead class="thead-dark">
+                        <tr>
+                            <td><strong>S. No </strong></td>
+                            <td><strong>Username </strong></td>
+                            <td><strong>First name </strong></td>
+                            <td><strong>Last name </strong></td>
+                            <td><strong>Tests attempted </strong></tf>
+                            <td><strong>Select this </strong></tf>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for query, counts in queryset %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ query.user.username|truncate_name:12 }}</td>
+                            <td>
+                                {% if query.user.first_name %}
+                                {{ query.user.first_name|truncate_name:12 }}
+                                {% else %}
+                                <div class="badge badge-danger">
+                                    <strong>Not provided</strong>
+                                </div>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if query.user.last_name %}
+                                {{ query.user.last_name|truncate_name:12 }}
+                                {% else %}
+                                <div class="badge badge-danger">
+                                    <strong>Not provided</strong>
+                                </div>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {{ counts }}
+                            </td>
+                            <td>
+                                {% if counts != 0 %}
+                                <a href="{% url 'users:self-answer-profiles' profile_pk=query.pk %}"><span
+                                        class="icon"><i class="icon-thumbs-up"
+                                            style="color: #ff8000;"></i></span></a>{% else %}<span class="icon"
+                                    style="color: #5b5456"><i class="icon-thumbs-up"></i></span> {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block javascript %}
+<script>
+    function fetch_random_user() {
+        var button = document.getElementById('fetch_random_user');
+        fetch_url = button.getAttribute('fetch-random-user-url');
+        $.ajax({
+            url: fetch_url,
+            method: "GET",
+            dataType: "json",
+            success: function (data) {
+                var return_url = data.return_url;
+                var response = confirm("You will now attempt a test to guess " + data.name +
+                    "'s personality!");
+                if (response) {
+                    location.href = return_url;
+                }
+            }
+        })
+    }
+</script>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block banner_text %}
+{% load custom_filters %}
+<h1>Results</h1>
+{% endblock %}
+
+
+{% block body %}
+{% if object_list %}
+<div class="gtco-container">
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <h1>Tests that peers attempted on your behalf</h1>
+        </div>
+    </div>
+    <table class="table table-striped text-center table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th scope="row"><strong>Test ID </strong></th>
+                <th><strong>Time </strong></th>
+                <th><strong>Day </strong></th>
+                <th><strong>Year </strong></th>
+                <th><strong>Attempted by</strong></th>
+                <th><strong>Link </strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+            <tr>
+                <th scope="row">{{ object.pk }}</td>
+                <td>{{ object.answer_date_and_time | date:"H:i" }}</td>
+                <td>{{ object.answer_date_and_time | date:"l, d F" }}</td>
+                <td>{{ object.answer_date_and_time | date:"Y" }}</td>
+                <td>{{ object.self_user_profile.user.username|truncate_name:12 }}</td>
+                <td>
+                    <a
+                        href="{% url 'graphs:comparison_view' relation_pk=object.pk self_pk=object.attempted_against.pk %}"><span
+                            class="icon"><i class="icon-eye"></i></span></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+{% include 'users/pagination.html' %}
+{% endblock %}

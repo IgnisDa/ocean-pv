@@ -1,0 +1,266 @@
+[
+    {
+        "subclass": "extraversion",
+        "text": "You tend to be quiet",
+        "factor": -1,
+        "number": 1
+    },
+    {
+        "subclass": "openness",
+        "text": "Are you sophisticated in art, music, or literature",
+        "factor": 1,
+        "number": 2
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "You worry a lot",
+        "factor": 1,
+        "number": 3
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Are you outgoing and sociable? ",
+        "factor": 1,
+        "number": 4
+    },
+    {
+        "subclass": "openness",
+        "text": "Are you original and come up with new ideas? ",
+        "factor": 1,
+        "number": 5
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Are you mostly moody? ",
+        "factor": 1,
+        "number": 6
+    },
+    {
+        "subclass": "openness",
+        "text": "You like to reflect and play with ideas",
+        "factor": 1,
+        "number": 7
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Do you like to cooperate with other?",
+        "factor": 1,
+        "number": 8
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "You start quarrels with others",
+        "factor": -1,
+        "number": 9
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "You do a thorough job",
+        "factor": 1,
+        "number": 10
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Are you considerate and kind to almost everyone? ",
+        "factor": 1,
+        "number": 11
+    },
+    {
+        "subclass": "openness",
+        "text": "Are you curious about many different things? ",
+        "factor": 1,
+        "number": 12
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Are you depressed, blue? ",
+        "factor": 1,
+        "number": 13
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Are you helpful and unselfish with others? ",
+        "factor": 1,
+        "number": 14
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Do you to be disorganized? ",
+        "factor": -1,
+        "number": 15
+    },
+    {
+        "subclass": "openness",
+        "text": "Do you prefer work that is routine? ",
+        "factor": -1,
+        "number": 16
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Do you tend to be lazy? ",
+        "factor": -1,
+        "number": 17
+    },
+    {
+        "subclass": "extraversion",
+        "text": "You have an assertive personality",
+        "factor": 1,
+        "number": 18
+    },
+    {
+        "subclass": "openness",
+        "text": "Do you value artistic and aesthetic experiences? ",
+        "factor": 1,
+        "number": 19
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Can you be cold and aloof",
+        "factor": -1,
+        "number": 20
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "You have a forgiving nature",
+        "factor": 1,
+        "number": 21
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "You do things efficiently",
+        "factor": 1,
+        "number": 22
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Are you generally trusting? ",
+        "factor": 1,
+        "number": 23
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Do you remain calm in tense situations? ",
+        "factor": -1,
+        "number": 24
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Are you a reliable worker? ",
+        "factor": 1,
+        "number": 25
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "You are relaxed and handle stress well",
+        "factor": -1,
+        "number": 26
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Do you consider yourself talkative? ",
+        "factor": 1,
+        "number": 27
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Do you make plans and follows through with them? ",
+        "factor": 1,
+        "number": 28
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Are you emotionally stable, not easily upset? ",
+        "factor": -1,
+        "number": 29
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Do you generate a lot of enthusiasm? ",
+        "factor": 1,
+        "number": 30
+    },
+    {
+        "subclass": "openness",
+        "text": "Would you describe yourself as an ingenious and deep thinker? ",
+        "factor": 1,
+        "number": 31
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "You tend to find fault with others",
+        "factor": -1,
+        "number": 32
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "You perseve until the task is finished",
+        "factor": 1,
+        "number": 33
+    },
+    {
+        "subclass": "openness",
+        "text": "You have few artistic interests",
+        "factor": -1,
+        "number": 34
+    },
+    {
+        "subclass": "openness",
+        "text": "Do you have an active imagination? ",
+        "factor": 1,
+        "number": 35
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Are you reserved? ",
+        "factor": -1,
+        "number": 36
+    },
+    {
+        "subclass": "openness",
+        "text": "You consider yourself inventive",
+        "factor": 1,
+        "number": 37
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Are you sometimes shy and inhibited? ",
+        "factor": -1,
+        "number": 38
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "You can be somewhat careless",
+        "factor": -1,
+        "number": 39
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Are you full of energy? ",
+        "factor": 1,
+        "number": 40
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "You can sometimes be rude to others",
+        "factor": -1,
+        "number": 41
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "You can be tense",
+        "factor": 1,
+        "number": 42
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "You get nervous easily ",
+        "factor": 1,
+        "number": 43
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Are you easily distracted? ",
+        "factor": -1,
+        "number": 44
+    }
+]

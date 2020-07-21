@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% load crispy_forms_tags %}
+{% block banner_text %}
+<h1>Comparing results</h1>
+{% endblock %}
+
+{% block body %}
+{% if plot %}
+
+<div class="gtco-container">
+  <div class="animate-box">
+    <div class="col-md-offset-2 text-center gtco-heading">
+
+      <div class="card border-warning">
+        <div class="card-body">
+          <div class="card-header">
+            <h2>Your guess versus their actual personality</h2>
+          </div>
+          {{ plot|safe }}
+          <div class="card-footer">
+            {% include 'includes/graph_instructions.html' %}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if comparison_plot %}
+<div class="gtco-container" id="guess-results">
+  <div class="animate-box">
+    <div class="col-md-offset-2 text-center gtco-heading">
+
+      <div class="card border-success">
+        <div class="card-body">
+          <div class="card-header">
+            <h2>How accurate was your guess?</h2>
+          </div>
+          {{ comparison_plot|safe }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}

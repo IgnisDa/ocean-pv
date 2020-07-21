@@ -1,0 +1,13 @@
+[run]
+omit = */tests/*
+       */migrations/*
+       **.cache**
+       **.vscode**
+       */templatetags/*
+       *apps.py,
+       *migrations/*,
+       *settings*,
+       *tests/*,
+       *wsgi.py,
+       manage.py
+       __init__.py

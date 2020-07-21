@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block banner_text %}
+{% load static %}
+<h1>{{ user }}'s <br>
+    Profile </h1>
+{% endblock %}
+
+{% block body %}
+<div class="gtco-container">
+
+
+    <div class="feature-center animate-box" data-animate-effect="fadeIn">
+        <span class="icon">
+            <i class="icon-user"></i>
+        </span>
+        <p>
+            <div style="text-align: center">
+                <h2><a href="{% url 'users:results' username=user.username %}">Your test results</a></h2>
+            </div>
+        </p>
+    </div>
+
+
+    <div class="feature-center animate-box" data-animate-effect="fadeIn">
+        <span class="icon">
+            <i class="icon-users"></i>
+        </span>
+        <p>
+            <div style="text-align: center">
+                <h2><a href="{% url 'graphs:multiple_results' %}">Compare personalities</a></h2>
+            </div>
+        </p>
+    </div>
+
+    <div class="feature-center animate-box" data-animate-effect="fadeIn">
+        <span class="icon">
+            <i class="icon-paper-stack"></i>
+        </span>
+        <p>
+            <div style="text-align: center">
+                <h2><a href="{% url 'users:profile-update' username=user.username %}">Update Profile</a>
+                </h2>
+            </div>
+        </p>
+    </div>
+
+    <div class="feature-center animate-box" data-animate-effect="fadeIn">
+        <span class="icon">
+            <i class="icon-edit"></i>
+        </span>
+        <p>
+            <div style="text-align: center">
+                <h2><a href="{% url 'users:password-change' %}">Change password</a></h2>
+            </div>
+        </p>
+    </div>
+
+
+</div>
+
+{% endblock %}

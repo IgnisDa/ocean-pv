@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!--================Home Banner Area =================-->
+{% block banner_text %}
+<h1>How this works</h1>
+<h2>Here's what to do</h2>
+{% endblock %}
+<!--===Home banner area===-->
+{% block body %}
+{% load crispy_forms_tags %}
+
+{% block instructions %}
+<div class="gtco-container">
+
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <div id="gtco-testimonial">
+                <div class="gtco-container">
+
+                    <div class="animate-box">
+                        <div class="owl-carousel owl-carousel-fullwidth ">
+
+                            <div class="item">
+                                <div class="testimony-slide2 active text-center">
+                                    <figure>
+                                        <img src="{% static 'interactions/images/referral_text.png' %}" alt="user">
+                                    </figure>
+                                    <span><strong>Step 1: Enter your peer's referral code</strong></span>
+                                    <blockquote>
+                                        <p>First, enter the referral code given in your peer's shared message
+                                            (highlighted in image). Click on <em class="text-danger">Submit</em>.
+                                            Assuming you entered a valid referral code, you will automatically be
+                                            redirected to the survey page.</p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimony-slide2 active text-center">
+                                    <figure>
+                                        <img src="{% static 'interactions/images/referral_graph_example.png' %}"
+                                            alt="user">
+                                    </figure>
+                                    <span><strong>Step 2: Find out the accuracy of your guess</strong></span>
+                                    <blockquote>
+                                        <p>Using your inputs and the ones provided by your peer earlier, two graphs will
+                                            be displayed- one will overlay your attempt on theirs and the second one
+                                            will show how accurate you were. It will also show your deviation.</p>
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block form %}
+<div class="gtco-container">
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <form method="post" data-validate-username-url="{% url 'interactions:howto-relations-ajax' %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-success btn-block" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<div class="gtco-container">
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            Click here to attempt a test for any random person, without a <em class="text-danger">Referral Code</em>
+            <a class="btn btn-warning btn-block" href="{% url 'interactions:howto-relations' %}">Random Person </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

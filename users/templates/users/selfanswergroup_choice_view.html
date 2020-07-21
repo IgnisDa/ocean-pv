@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block banner_text %}
+<h1>Tests attempted by {{ object_list.0.self_user_profile.user.username }}</h1>
+{% endblock %}
+{% load custom_filters %}
+{% load widget_tweaks %}
+
+<!--- TODO: Change the ordering of the table so that test ID comes after date and time --->
+{% block body %}
+{% if object_list %}
+
+<div class="animate-box">
+    <div class="col-md-offset-2 text-center gtco-heading">
+
+        <table class="table table-striped table-bordered">
+            <thead class="thead">
+                <tr>
+                    <th scope="row"><strong>S. No </strong></th>
+                    <th><strong>Test time </strong></th>
+                    <th><strong>Test date </strong></th>
+                    <th><strong>Test ID </strong></th>
+                    <th><strong>Preview </strong></th>
+                    <th><strong>Take test </strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in object_list %}
+                <div class="form-group">
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ object.answer_date_and_time|date:"H:i" }}</td>
+                        <td>{{ object.answer_date_and_time|date:"dS F, Y" }}</td>
+                        <td> {{ object.pk }}</td>
+                        <td><a href="{% url 'graphs:single_result' object.pk %}"><span class="icon"><i
+                                        class="icon-eye"></i></span></a></td>
+
+                        <td><a
+                                href="{% url 'interactions:taketest-relations' profile_pk=object.self_user_profile.pk against=object.pk %}"><span
+                                    class="icon"><i class="icon-pencil"></i></span></a></td>
+                    </tr>
+                </div>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+{% else %}
+<div class="gtco-container">
+
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            Looks like {{ object_list.0.self_user_profile.user.username }} haven't attempted any tests. Why don't
+            you ask them to attempt one?
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'user_base.html' %}
+
+{% block user_action_title %}
+Logout
+{% endblock %}
+
+{% block user_action %}
+You have been logged out
+{% endblock %}
+
+{% block forgot_password %}
+{% csrf_token %}
+<div class="p-t-10">
+    <a href="{% url 'users:login' %}" class="btn btn-success">
+        Already have an account? </a>
+    </a>
+</div>
+<div class="p-t-10">
+    <a href="{% url 'users:register' %}" class="btn btn-success">
+        Need to create an account?
+    </a>
+</div>
+<div class="p-t-10">
+    <a href="{% url 'home:home' %}" class="btn btn-danger">Homepage </a>
+</div>
+{% endblock %}

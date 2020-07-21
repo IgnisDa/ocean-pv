@@ -1,0 +1,13 @@
+{% if user.is_authenticated and not user.email %}
+	<div class="alert alert-info">
+  	Looks like you haven't completed your profile. Complete it 
+  	<a href="{% url 'users:profile-update' username=user.username %}" class='text-success'>here</a> for a more tailored experience.
+	</div> 
+{% endif %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+  {{ message|safe }}
+</div> 
+{% endfor %}
+{% endif %}

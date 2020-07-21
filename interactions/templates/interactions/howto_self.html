@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!--================Home Banner Area =================-->
+{% block banner_text %}
+<h1>How the survey is structured </h1>
+<h2>Here's what to expect </h2>
+{% endblock %}
+<!--===Home banner area===-->
+{% block body %}
+{% load static %}
+{% block instructions %}
+
+<div class="gtco-container">
+
+	<div class="animate-box">
+		<div class="col-md-offset-2 text-center gtco-heading">
+			<div id="gtco-testimonial">
+				<div class="gtco-container">
+
+					<div class="animate-box">
+						<div class="owl-carousel owl-carousel-fullwidth ">
+							<div class="item">
+								<div class="testimony-slide2 active text-center">
+									<figure>
+										<img src="{% static 'home/images/question_banner.bmp' %}" alt="user">
+									</figure>
+									<span><strong>Simple and easy questions</strong></span>
+									<blockquote>
+										<p>The questions are straightforward and to the point. You don't need to
+											type anything out.
+											Just choose what you think is best and move on. </p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony-slide2 active text-center">
+									<figure>
+										<img src="{% static 'home/images/choices.bmp' %}" alt="user">
+									</figure>
+									<span><strong>Don't hesitate and answer truthfully </strong></span>
+									<blockquote>
+										<p>Every question has five possible answers. Choose one from the drop down
+											menu. Remember,
+											there is no correct answer to these questions. </p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony-slide2 active text-center">
+									<figure>
+										<img src="{% static 'home/images/results_table.png' %}">
+									</figure>
+									<span><strong>Visualizations ready instantly </strong></span>
+									<blockquote>
+										<p>After you submit, you will be redirected to a page listing all your
+											attempts. If this is
+											your first time taking this test, there will be only one. Click on the
+											latest attempt to
+											see some beautiful data. </p>
+									</blockquote>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<a class="btn btn-success btn-block" href="{% url 'interactions:taketest' %}">I'm ready! </a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+{% endblock %}

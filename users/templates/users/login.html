@@ -1,0 +1,37 @@
+{% extends 'user_base.html' %}
+
+{% block user_action_title %}
+Login
+{% endblock %}
+
+{% block user_action %}
+Login
+{% endblock %}
+
+{% block body %}
+
+
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
+<form method="POST">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <div class="btn-toolbar">
+    <button class="btn btn-info" type="submit">Login </button>
+    <a href="{% url 'home:home' %}" class="btn btn-danger ml-auto">Homepage </a>
+  </div>
+</form>
+{% endblock %}
+{% block forgot_password %}
+<div class="text-center p-t-10">
+  <a class="txt1" href="{% url 'users:password-reset' %}">
+    Forgot Password?
+  </a>
+</div>
+<div class="text-center p-t-10">
+  <a class="txt1" href="{% url 'users:register' %}">
+    Need to create an account?
+  </a>
+</div>
+{% endblock %}

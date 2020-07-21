@@ -1,0 +1,33 @@
+{% extends 'user_base.html' %}
+
+{% block user_action_title %}
+Register
+{% endblock %}
+
+{% block user_action %}
+Register
+{% endblock %}
+
+{% block body %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="g-recaptcha form-control mb-4" data-sitekey="{{ SITE_KEY }}"></div>
+    <div class="btn-toolbar">
+        <button class="btn btn-info" type="submit">Sign Up</button>
+        <a href="{% url 'home:home' %}" class="btn btn-danger ml-auto">Homepage </a>
+    </div>
+</form>
+{% endblock %}
+
+{% block forgot_password %}
+<div class="text-center p-t-10">
+    <a class="txt1" href="{% url 'users:login' %}">
+        Have an account?
+    </a>
+</div>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load crispy_forms_tags %}
+{% block banner_text %}
+<h1>Compare Personality</h1>
+{% endblock %}
+
+{% block body %}
+
+{% if plot %}
+<div class="gtco-container">
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+
+            <div class="card border-{% random_color %}">
+                <div class="card-body">
+                    <div class="card-header">
+                        <h2>Comparing personalities</h2>
+                    </div>
+                    {{ plot|safe }}
+                    <div class="card-footer">
+                        {% include 'includes/graph_instructions.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endif %}
+
+<div class="gtco-container">
+    <div class="animate-box">
+        <form method="POST">
+            <div class="form-group">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div style="text-align: center;">
+                    <button type="submit" class="btn btn-success">Submit </button>
+                </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="animate-box">
+    <div class="text-center gtco-heading">
+
+        {% for data in description_data|make_subsets:3 %}
+        <div class="card-deck">
+            {% for dict in data %}
+            {% if dict.master %}
+            {% else %}
+            <div class="card mb-3 border-{% random_color %}">
+                <div class="card-header text-{% random_color %}">{{ dict.answer_group_pk }}: {{ dict.name }}</div>
+                <div class="card-body">
+                    <p class="card-text text-{% random_color %}">Percentage difference: {{ dict.percentage }}%</p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+<div class="animate-box">
+    <div class="alert alert-primary" role="alert" style="text-align:center;">
+        <button id="button-text" class="btn btn-dark" onclick="hide_element()">
+            &#9660; Show Example
+        </button>
+    </div>
+</div>
+
+
+<div class="gtco-container text-center" id="multiple-result-view-instructions" style="display: none;">
+    <div class="animate-box">
+
+        <div class="card mb-3">
+            <div class="card-header">
+                <h3>Example: </h3>
+            </div>
+            <div class="card-body">
+                <img class="img img-thumbnail" src="{% static 'graphs/images/multiple_results.jpg' %}"
+                    alt="graph_instructions">
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+{%  block javascript %}
+<script>
+    function hide_element() {
+        var example = document.getElementById('multiple-result-view-instructions');
+        var btn_text = document.getElementById('button-text');
+        if (example.style.display === "block") {
+            example.style.display = "none";
+            btn_text.innerHTML = "&#9660; Show Example";
+        } else if (example.style.display === "none") {
+            example.style.display = "block";
+            btn_text.innerHTML = "&#9650; Hide Example";
+        }
+    }
+</script>
+{% endblock %}

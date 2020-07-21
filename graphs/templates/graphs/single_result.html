@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load crispy_forms_tags %}
+<!--- Removed --->
+{% block sharethis %}
+</style>
+{% endblock %}
+{% block banner_text %}
+<h1>{{ user }}'s Results</h1>
+{% endblock %}
+
+{% block body %}
+<div class="gtco-container">
+  <div class="animate-box">
+    <div class="col-md-offset-2 text-center gtco-heading">
+
+      <div class="card border-{% random_color %} ">
+        <div class="card-body">
+          <div class="card-header">
+            <h2>Here is what your personality looks like</h2>
+          </div>
+          {{ plot|safe }}
+          <div class="card-footer">
+            {% include 'includes/graph_instructions.html' %}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="gtco-container" id="share-box">
+  <div class="animate-box">
+    <div class="col-md-offset-2 text-center gtco-heading">
+
+      <div class="card border-{% random_color %}">
+        <div class="card-header">
+          <h4><b>Share this with your peers</b></h4>
+          <h6>Ask them to attempt a test on your behalf and see how well they know you</h6>
+        </div>
+        <div class="card-body">
+          <div class="card-deck">
+            {% for social, attrs in share_box.items %}
+
+            <div class="card bg-warning">
+              <div class="card-body">
+                <a href="{{ attrs.href }}" target="_blank"><img src="{{ attrs.src }}"></a>
+              </div>
+            </div>
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="gtco-container" id="description-box">
+  <div class="animate-box">
+    <div class="col-md-offset-2 text-center gtco-heading">
+
+      {% for key, value in descriptions.items %}
+      <div class="card mb-3 border-primary">
+        <div class="card-header text-secondary">
+          <div class="row">
+            <div class="col">
+              {% for p_key, p_value in percentiles.items %}
+              {% if p_key == key %}
+              <strong>{{ key|title }}:</strong>
+              {% if p_value > 50 %}
+              <em class="text-success">High</em>
+              {% else %}
+              <em class="text-danger">Low</em>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-text text-dark">{{ value }}</p>
+          <div class="card-footer bg-transparent border-{% random_color %}">
+            <div class="row">
+              <div class="col">
+                <div class="text-muted %}">
+                  Among the users that have attempted this test, you are above
+                  <strong class="text-{% if p_value > 50 %}success{% else %}danger{% endif %}">{{ p_value }}%</strong>
+                  people in {{ key }}!
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <a href="{% url 'graphs:multiple_results' %}" class="btn btn-info btn-block">Click here to
+        compare
+        your personality with your
+        friends</a>
+    </div>
+  </div>
+</div>
+
+<div class="gtco-container">
+  <div class="animate-box">
+    <div class="col-md-offset-2 text-center gtco-heading">
+      <form method="GET" id="post-form">
+        <div id="results">
+          {% csrf_token %}
+          {{ form.accuracy.help_text }}
+          <div class="input-group">
+            {{ form.pk }}
+            {{ form.accuracy }}
+            <div class="input-group-append">
+              <div class="input-group-text">%</div>
+            </div>
+          </div>
+          <div class="col-auto my-1">
+            <button class="btn btn-success" type="submit">Submit </button>
+          </div>
+
+          <div id="messages">
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{%  block javascript %}
+<script>
+  $('#post-form').on('submit', function (event) {
+    event.preventDefault();
+    add_accuracy();
+  });
+
+  function add_accuracy() {
+    $.ajax({
+      url: "{% url 'graphs:update-accuracy' %}", // the endpoint
+      type: "GET", // http method
+      data: {
+        accuracy: $('#id_accuracy').val(),
+        pk: $('#id_pk').val()
+      }, // data sent with the post request
+
+      // handle a successful response
+      success: function (json) {
+        $('#id_accuracy').val(''); // remove the value from the input
+        // alert(json.message);
+        if (!json.error) {
+          $('#results').html("<div class='alert-box alert alert-success'>" + json.message);
+        } else {
+          if (json.remove) {
+            $('#results').html("<div class='alert-box alert alert-danger'>" + json.message);
+          } else {
+            $('#messages').append("<div class='alert-box alert alert-success'>" + json.message);
+          }
+        };
+      },
+      // handle a non-successful response
+      error: function (xhr, errmsg, err) {
+        $('#results').html("<div class='alert-box alert alert-danger'>Oops! We have encountered an error: " +
+          errmsg +
+          " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+        console.log(xhr.status + ": " + xhr
+          .responseText); // provide a bit more info about the error to the console
+      }
+    });
+  }
+</script>
+{% endblock %}

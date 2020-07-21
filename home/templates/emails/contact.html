@@ -1,0 +1,10 @@
+{% extends 'emails/email_base.html' %}
+{% block preview %}
+    {% block title %}   
+        {{ subject }}
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+	{{ message }}
+{% endblock %}

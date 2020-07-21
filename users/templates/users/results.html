@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% block banner_text %}
+{% load custom_filters %}
+<h1>{{ user }}'s Results</h1>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="gtco-container">
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <h1>Tests that you have attempted</h1>
+        </div>
+        {% if self_answer_groups %}
+        <table class="table table-striped text-center table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="row"><strong>S. No </strong></th>
+                    <th><strong>Time </strong></th>
+                    <th><strong>Day </strong></th>
+                    <th><strong>Year </strong></th>
+                    <th><strong>Test ID </strong></th>
+                    <th><strong>Link </strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for answer_group in self_answer_groups %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ answer_group.answer_date_and_time | date:"H:i" }}</td>
+                    <td>{{ answer_group.answer_date_and_time | date:"l, d F" }}</td>
+                    <td>{{ answer_group.answer_date_and_time | date:"Y" }}</td>
+                    <td>{{ answer_group.id }}</td>
+                    <td>
+                        <a href="{% url 'graphs:single_result' answer_group.pk %}"><span class="icon"><i
+                                    class="icon-eye"></i></span></a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="6">
+                        <a href="{% url 'users:list-self' profile_pk=user.profile.pk %}">More</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {% else %}
+        You don't have any test results, would you like to take a test?
+        <a class="btn btn-success btn-block" href="{% url 'interactions:howto' %}">Attempt survey </a>
+        {% endif %}
+    </div>
+</div>
+
+
+
+
+<div class="gtco-container">
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <h1>Tests that you have attempted for your peers</h1>
+        </div>
+    </div>
+    {% if relation_answer_groups %}
+    <table class="table table-striped text-center table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th scope="row"><strong>Test ID </strong></th>
+                <th><strong>Time </strong></th>
+                <th><strong>Day </strong></th>
+                <th><strong>Year </strong></th>
+                <th><strong>Attempted for</strong></th>
+                <th><strong>Link </strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for relation_answer_group in relation_answer_groups %}
+            <tr>
+                <th scope="row">{{ relation_answer_group.pk }}</th>
+                <td>{{ relation_answer_group.answer_date_and_time | date:"H:i" }}</td>
+                <td>{{ relation_answer_group.answer_date_and_time | date:"d F" }}</td>
+                <td>{{ relation_answer_group.answer_date_and_time | date:"Y" }}</td>
+                <td>
+                    {{ relation_answer_group.relation_user_profile.user.username|truncate_name:12 }}
+                </td>
+                <td>
+                    <a
+                        href="{% url 'graphs:comparison_view' relation_pk=relation_answer_group.pk self_pk=relation_answer_group.attempted_against.pk %}"><span
+                            class="icon"><i class="icon-eye"></i></span></a>
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="6">
+                    <a href="{% url 'users:list-relation' profile_pk=user.profile.pk %}">More</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {% else %}
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            You haven't attempted any tests on behalf of your peers, would you like to take one?
+            <a class="btn btn-success btn-block" href="{% url 'interactions:howto-relations' %}">Attempt
+                survey </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+
+<div class="gtco-container">
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <h1>Tests that others have attempted to guess your personality</h1>
+        </div>
+    </div>
+    {% if others_answer_groups %}
+    <table class="table table-striped text-center table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th scope="row"><strong>Test ID </strong></th>
+                <th><strong>Time </strong></th>
+                <th><strong>Day </strong></th>
+                <th><strong>Year </strong></th>
+                <th><strong>Attempted by</strong></th>
+                <th><strong>Link </strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for others_answer_group in others_answer_groups %}
+            <tr>
+                <th scope="row">{{ others_answer_group.pk }}</td>
+                <td>{{ others_answer_group.answer_date_and_time | date:"H:i" }}</td>
+                <td>{{ others_answer_group.answer_date_and_time | date:"d F" }}</td>
+                <td>{{ others_answer_group.answer_date_and_time | date:"Y" }}</td>
+                <td>
+                    {{ others_answer_group.self_user_profile.user.username|truncate_name:12 }}
+                </td>
+                <td>
+                    <a
+                        href="{% url 'graphs:comparison_view' relation_pk=others_answer_group.pk self_pk=others_answer_group.attempted_against.pk %}"><span
+                            class="icon"><i class="icon-eye"></i></span></a>
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="6">
+                    <a href="{% url 'users:list-other' profile_pk=user.profile.pk %}">More</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {% else %}
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            Looks like no one has attempted a test on your behalf. Why don't you give them a Test ID from above and
+            ask them to guess your personality?
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+
+<div class="gtco-container">
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <a href="{% url 'graphs:multiple_results' %}" class="btn btn-info btn-block">Click here to
+                compare
+                your personality with your
+                friends</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

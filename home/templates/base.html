@@ -1,0 +1,337 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	home by FreeHTML5.co
+	Twitter: http://twitter.com/fh5co
+	URL: http://FreeHTML5.co
+-->
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ocean Personality Test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ShareThis BEGIN -->
+	{% block sharethis %}
+	<script async
+		src="https://platform-api.sharethis.com/js/sharethis.js#property=5f07d1761fc3670013bd290f&product=sticky-share-buttons">
+	</script>
+	{% endblock %}
+	<!-- ShareThis END -->
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="A website" />
+	<meta property="og:image" content="some img" />
+	<meta property="og:url" content="www.ocean-pv.com" />
+	<meta property="og:site_name" content="ocean-pv" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600,400italic,700' rel='stylesheet'
+		type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'home/css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'home/css/icomoon.css' %}">
+	<!-- FontAwesome-->
+	<script src="https://use.fontawesome.com/bc63e197da.js"></script>
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'home/css/magnific-popup.css' %}">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'home/css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'home/css/owl.theme.default.min.css' %}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+
+	<!-- Custom Css -->
+	{% block css %}
+	{% endblock %}
+	<!-- Modernizr JS -->
+	<script src="{% static 'home/js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+	<div class="gtco-loader"></div>
+
+	<div id="page">
+		<nav class="gtco-nav" role="navigation">
+			<div class="gtco-container">
+
+
+				<div class="col-xs-2">
+					<div id="gtco-logo"><a href="{% url 'home:home' %}">OCEAN.</a></div>
+				</div>
+				<div class="col-xs-10 text-right menu-1 overlapa">
+					<ul>
+						<li class="active"><a href="{% url 'home:home' %}">Home</a></li>
+						{% if user.is_authenticated %}
+						<li class="active"><a href="{% url 'users:profile' user.username %}">Profile </a></li>
+						{% else %}
+						<li class="has-dropdown">
+							<a href="#">Profile Options</a>
+							<ul class="dropdown">
+								<li><a href="{% url 'users:register' %}">Register</a></li>
+								<li><a href="{% url 'users:login' %}">Login</a></li>
+							</ul>
+						</li>
+						{% endif %}
+
+						<li class="has-dropdown">
+							<a href="#">Discover</a>
+							<ul class="dropdown">
+								{% if user.is_authenticated %}
+								<li><a href="{% url 'users:results' username=user.username %}">Results</a>
+								<li><a href="{% url 'graphs:multiple_results' %}">Comparisons</a>
+								</li>
+								{% endif %}
+								<li><a href="{% url 'home:resources' %}">Resources</a></li>
+							</ul>
+						</li>
+						<li><a href="{% url 'home:contact' %}">Contact</a></li>
+						{% if user.is_authenticated %}
+						<li><a href="{% url 'users:logout' %}">Logout</a></li>
+						{% endif %}
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+
+		<header id="gtco-header" class="gtco-cover" role="banner"
+			style="background-image:url({% static 'home/images/img_bg_1.jpg' %});">
+			<div class="overlay"></div>
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-center">
+						<div class="display-t">
+							<div class="display-tc animate-box" data-animate-effect="fadeIn">
+								{% block banner_text %}
+								{% endblock %}
+								{% include 'includes/messages.html' %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+
+		<!--================TEMPLATES START HERE=================-->
+		<div id="gtco-services">
+			<div class="gtco-container">
+				{% block body %}
+				{% endblock %}
+			</div>
+		</div>
+		<!--================TEMPLATES END HERE =================-->
+
+		<footer id="gtco-footer" role="contentinfo" style="background-color: #333333;">
+
+			<div class="gtco-container">
+				<div class="animate-box">
+
+					<div class="text-center bg-transparent border-warning" id="website-links">
+
+						<div class="website-links-body text-left">
+
+							<div class="row">
+								<div class="col">
+									<a href="{% url 'home:home' %}">
+										<li>
+											Home
+										</li>
+									</a>
+								</div>
+								<div class="col">
+									<a href="{% url 'interactions:taketest' %}">
+										<li>
+											Take a test
+										</li>
+									</a>
+								</div>
+								<div class="col">
+									<a href="{% url 'home:contact' %}">
+										<li>
+											Contact
+										</li>
+									</a>
+								</div>
+							</div>
+
+							{% if user.is_authenticated %}
+							<div class="row">
+								<div class="col">
+									<a href="{% url 'users:results' username=user.username %}">
+										<li>
+											All Results
+										</li>
+									</a>
+								</div>
+								<div class="col">
+									<a href="{% url 'users:list-self' profile_pk=user.profile.pk %}">
+										<li>
+											Results
+										</li>
+									</a>
+								</div>
+								<div class="col">
+									<a href="{% url 'users:list-relation' profile_pk=user.profile.pk %}">
+										<li>
+											Peer Results
+										</li>
+									</a>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<a href="{% url 'users:list-other' profile_pk=user.profile.pk %}">
+										<li>
+											Other Results
+										</li>
+									</a>
+								</div>
+								<div class="col">
+									<a href="{% url 'users:profile' username=user.username %}">
+										<li>
+											Your Profile
+										</li>
+									</a>
+								</div>
+								<div class="col">
+									<a href="{% url 'users:profile-update' username=user.username %}">
+										<li>
+											Update Profile
+										</li>
+									</a>
+								</div>
+							</div>
+							{% endif %}
+
+							<div class="row">
+								<div class="col">
+									<a href="{% url 'interactions:howto' %}">
+										<li>
+											Instructions
+										</li>
+									</a>
+								</div>
+								<div class="col">
+									<a href="{% url 'interactions:taketest' %}">
+										<li>
+											Peer Instructions
+										</li>
+									</a>
+								</div>
+								<div class="col">
+									<a href="{% url 'interactions:howto-referral' %}">
+										<li>
+											Referral Instructions
+										</li>
+									</a>
+								</div>
+							</div>
+
+							<div class="row mt-3">
+								<div class="col">
+									<a href="{% url 'home:contact' %}">
+										<h4 class="text-danger text-center">
+											Encountered a problem?
+										</h4>
+									</a>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div class="gtco-container mt-5">
+				<div class="animate-box">
+					<div class="col-md-offset-2 text-center gtco-heading">
+						<div class="card text-center bg-transparent" id="copyright">
+
+							<div class="card-header">
+								<h3 style="color: floralwhite;">Acknowledgements</h3>
+							</div>
+
+							<div class="card-body">
+								<p>
+									Website designed with <img
+										src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTcuODY3IDMuNDkzbDQuMTMzIDMuNDQ0djUuMTI3bC0xMCA4LjMzMy0xMC04LjMzNHYtNS4xMjZsNC4xMzMtMy40NDQgNS44NjcgMy45MTEgNS44NjctMy45MTF6bS4xMzMtMi40OTNsLTYgNC02LTQtNiA1djdsMTIgMTAgMTItMTB2LTdsLTYtNXoiLz48L3N2Zz4=">
+									by IgnisDa
+								</p>
+
+								<p>
+									<a href="http://www.djangoproject.com/">
+										<img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif"
+											border="0" alt="Powered by Django." title="Powered by Django." /></a>
+								</p>
+								<p>
+									<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
+									<small class="block">Template designed by <a href="http://FreeHTML5.co/"
+											target="_blank">FreeHTML5.co</a>
+								</p>
+								<p>
+									<ul class="gtco-social-icons">
+										<li><a href="http://www.github.com/IgnisDa/ocean-pv"><i class="fa fa-github" style="font-size: 50px;"><p class="text-muted">Source Code</p></i></a>
+										</li>
+									</ul>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</footer>
+
+
+
+		<div class="gototop js-top">
+			<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+		</div>
+
+		<!-- jQuery -->
+		<script src="{% static 'home/js/jquery.min.js' %}"></script>
+		<!-- jQuery Easing -->
+		<script src="{% static 'home/js/jquery.easing.1.3.js' %}"></script>
+		<!-- Bootstrap -->
+		<script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+		<!-- Waypoints -->
+		<script src="{% static 'home/js/jquery.waypoints.min.js' %}"></script>
+		<!-- Carousel -->
+		<script src="{% static 'home/js/owl.carousel.min.js' %}"></script>
+		<!-- countTo -->
+		<script src="{% static 'home/js/jquery.countTo.js' %}"></script>
+		<!-- Magnific Popup -->
+		<script src="{% static 'home/js/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static 'home/js/magnific-popup-options.js' %}"></script>
+		<!-- Main -->
+		<script src="{% static 'home/js/main.js' %}"></script>
+		<!-- Custom Javascript -->
+		{% block javascript %}
+		{% endblock %}
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block banner_text %}
+<h1>Update {{ user }}'s <br>
+  Profile </h1>
+{% endblock %}
+
+{% block body %}
+
+
+<div class="gtco-container">
+  <form method="POST">
+    {% csrf_token %}
+    {{ user_form|crispy }}
+    {{ profile_form|crispy }}
+    <div class="btn-toolbar">
+      <button class="btn btn-success" type="submit"> <i class="icon-pencil" aria-hidden="true"></i>Submit </button>
+      <a href="{% url 'users:profile' username=user.username %}" class="btn btn-danger ml-auto">Cancel </a>
+    </div>
+  </form>
+</div>
+
+
+{% endblock %}

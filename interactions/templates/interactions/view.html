@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load custom_tags %}
+<!--================Home Banner Area =================-->
+{% block banner_text %}
+<h1>Here's a little surprise</h1>
+{{ view.data.name }}
+{% endblock %}
+<!--===Home banner area===-->
+{% block body %}
+<div class="gtco-container">
+
+    <div class="animate-box">
+        <div class="col-md-offset-2 gtco-heading text-center">
+            <p>Remember that list that we made all those months ago? And how I told you, I'm gonna do something with
+                that list? Well here you go. </p>
+        </div>
+    </div>
+
+</div>
+
+<div class="gtco-container">
+
+    <div class="animate-box">
+        <div class="col-md-offset-2 text-center gtco-heading">
+            <div id="gtco-testimonial">
+                <div class="gtco-container">
+
+                    {% for item in data %}
+
+                    <div class="card mb-3 border-{% random_color %}">
+                        <div class="card-header text-{% random_color %}"><strong>{{ item.title }}</strong></div>
+                        <figure>
+                            <img src="{% static item.img %}" class="img-thumbnail" alt="user">
+                        </figure>
+                        <div class="card-body">
+                            <p class="card-text">{{ item.desc|safe }}</p>
+                            <div class="card-footer bg-transparent border-success text-right">-{{ item.said_by }}
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
