@@ -2,7 +2,7 @@
 OCEAN Personality Visualization
 *******************************
 
-.. image:: https://img.shields.io/github/license/IgnisDa/OCEAN-personality-visualization?style=for-the-badge   
+.. image:: https://img.shields.io/github/license/IgnisDa/ocean-pv?style=for-the-badge   
 	:alt: GitHub
 
 .. image:: https://img.shields.io/travis/com/IgnisDa/ocean-pv?style=for-the-badge
