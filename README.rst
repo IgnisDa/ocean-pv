@@ -2,7 +2,7 @@
 OCEAN Personality Visualization
 *******************************
 
-.. image:: https://img.shields.io/github/license/IgnisDa/OCEAN-personality-visualization?style=for-the-badge   
+.. image:: https://img.shields.io/github/license/IgnisDa/ocean-pv?style=for-the-badge   
 	:alt: GitHub
 
 .. image:: https://img.shields.io/travis/com/IgnisDa/ocean-pv?style=for-the-badge
@@ -34,18 +34,29 @@ attribute means.
 .. image:: interactions/static/interactions/images/graph_example.png
     :align: center 
     :alt: single_result_view.png
-    
+
+Completing your profile
+-----------------------
+
 After completing the test, it's recommended that you complete your
-profile and fill in other information about yourself like `bio`, 
+profile and fill in other information about yourself like your `bio`, 
 `email`, `country`, `gender` etc. This will help us to categorize
 your answers better.
 
-After that
-----------
+Inviting some peers to the scene
+--------------------------------
 
-You can do this too
- 
+Peers are anyone you know- family, friends, relatives, co-workers, bosses and
+acquaintance. You can ask them to attempt a test and try to guess your
+personality. To do this, go to the results page (accessed from the dropdown
+option `Discover`) and select a test you would like them to attempt
+against.
+
+.. image:: home/static/home/images/results_table.png
+    :align: center 
+    :alt: results_table.png
+
 Further reading
 ===============
 
-The code is documented at https://ocean-personality-visualization.readthedocs.io/en/latest/. 
+The code is documented at https://ocean-pv.readthedocs.io/en/latest/

@@ -14,7 +14,7 @@
     {{ user_form|crispy }}
     {{ profile_form|crispy }}
     <div class="btn-toolbar">
-      <button class="btn btn-success" type="submit"> <i class="icon-pencil" aria-hidden="true"></i>Submit </button>
+      <button class="btn btn-success" type="submit">Submit</button>
       <a href="{% url 'users:profile' username=user.username %}" class="btn btn-danger ml-auto">Cancel </a>
     </div>
   </form>

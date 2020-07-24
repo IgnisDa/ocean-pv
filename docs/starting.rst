@@ -1,8 +1,8 @@
 *******************************
-OCEAN-Personality-Visualization
+OCEAN Personality Visualization
 *******************************
 
-.. image:: https://img.shields.io/github/license/IgnisDa/OCEAN-personality-visualization?style=for-the-badge   
+.. image:: https://img.shields.io/github/license/IgnisDa/ocean-pv?style=for-the-badge   
 	:alt: GitHub
 
 A website that helps you visualize your personality using graphs and compare it 
@@ -36,7 +36,7 @@ Installing
 ==========
 First, clone this project from Github_:
 	
-.. _Github: https://github.com/IgnisDa/OCEAN-personality-visualization
+.. _Github: https://github.com/IgnisDa/ocean-pv/
 
 .. code:: console 
 
@@ -47,7 +47,7 @@ up a working environment.
 
 .. code:: console
 
-	$ cd OCEAN-personality-visualization/
+	$ cd ocean-pv/
 	$ python -m venv env
 	$ source ./env/bin/activate
 	$ pip install -r requirements.txt
