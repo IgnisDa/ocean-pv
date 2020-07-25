@@ -12,6 +12,9 @@ OCEAN Personality Visualization
 	:target: https://ocean-pv.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
 
+What this website does
+======================
+
 A website to visualize your personality using graphs and compare it 
 with others. It asks you a
 series of questions and analyzes your inputs to create an easy to understand 
@@ -23,11 +26,8 @@ personality used by researchers.
 
 .. _OCEAN: https://en.m.wikipedia.org/wiki/Big_Five_personality_traits 
 
-What this website does
-======================
-
-Start to use the website
-========================
+Start using the website
+=======================
 
 First Steps
 -----------
