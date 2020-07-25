@@ -52,7 +52,7 @@ class ReferralCodeForm(forms.Form):
 
     def clean_referral_code(self):
         referral_code = self.cleaned_data.get('referral_code')
-        pattern = "^p:[\d]+-a:[\d]+$"  # type: re
+        pattern = r"^p:[\d]+-a:[\d]+$"  # type: re
         if not re.search(pattern, referral_code):
             raise forms.ValidationError(
                 ('You entered an invalid referral code'), code='invalid_regex'

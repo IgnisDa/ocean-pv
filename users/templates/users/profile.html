@@ -1,12 +1,30 @@
 {% extends 'base.html' %}
-{% block banner_text %}
 {% load static %}
+{% block banner_text %}
 <h1>{{ user }}'s <br>
     Profile </h1>
 {% endblock %}
 
+
 {% block body %}
 <div class="gtco-container">
+    <div class="feature-center animate-box" data-animate-effect="fadeIn">
+
+	<div class="card">
+  <div class="card-header text-center">
+  <h1>{{ user }} in a nutshell</h1>
+    </div>
+    
+	    <div class="card-body">
+	        	<strong>Username:</strong> {{ user.username }}
+	    </div>
+	    
+</div>
+    
+    </div>
+</div>
+
+<div class="gtco-container mt-4">
 
 
     <div class="feature-center animate-box" data-animate-effect="fadeIn">
@@ -14,7 +32,7 @@
             <i class="icon-user"></i>
         </span>
         <p>
-            <div style="text-align: center">
+            <div class="text-center">
                 <h2><a href="{% url 'users:results' username=user.username %}">Your test results</a></h2>
             </div>
         </p>
@@ -26,7 +44,7 @@
             <i class="icon-users"></i>
         </span>
         <p>
-            <div style="text-align: center">
+            <div class="text-center">
                 <h2><a href="{% url 'graphs:multiple_results' %}">Compare personalities</a></h2>
             </div>
         </p>
@@ -37,7 +55,7 @@
             <i class="icon-paper-stack"></i>
         </span>
         <p>
-            <div style="text-align: center">
+            <div class="text-center">
                 <h2><a href="{% url 'users:profile-update' username=user.username %}">Update Profile</a>
                 </h2>
             </div>
@@ -49,7 +67,7 @@
             <i class="icon-edit"></i>
         </span>
         <p>
-            <div style="text-align: center">
+            <div class="text-center">
                 <h2><a href="{% url 'users:password-change' %}">Change password</a></h2>
             </div>
         </p>
@@ -57,5 +75,4 @@
 
 
 </div>
-
 {% endblock %}

@@ -7,7 +7,6 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-django = "^3.1a1"
 django-crispy-forms = "^1.9.1"
 django-widget-tweaks = "^1.4.8"
 django-countries = "^6.1.2"
@@ -16,6 +15,8 @@ gunicorn = "^20.0.4"
 python-decouple = "^3.3"
 requests = "^2.23.0"
 argon2-cffi = "^20.1.0"
+django = "^3.0.8"
+psycopg2 = "^2.8.5"
 
 
 [tool.poetry.dev-dependencies]

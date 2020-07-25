@@ -49,8 +49,8 @@ class ProfileUpdateForm(RequiredFieldsMixin, forms.ModelForm):
     )
     receive_emails = forms.ChoiceField(
         choices=CHOICES,
-        help_text=('Whether you should be notified (by email) when a '
-        'peer attempts a test')
+        help_text=('Whether you should be notified (by email) when '
+        'someone tries to guess your personality')
     )
 
     class Meta:
@@ -67,7 +67,9 @@ class ProfileUpdateForm(RequiredFieldsMixin, forms.ModelForm):
 
 class UserUpdateForm(RequiredFieldsMixin, forms.ModelForm):
 
-    email = forms.EmailField()
+    email = forms.EmailField(
+    help_text='Your email will never be revealed publicly'
+    )
 
     class Meta:
         model = User

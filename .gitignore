@@ -137,7 +137,7 @@ new.py
 new2.py
 new.html
 poetry.lock
-update-reqs.sh
+update-reqs
 temp-plot.html
 chromedriver
 
