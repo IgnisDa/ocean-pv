@@ -145,6 +145,7 @@ chromedriver
 *.bak
 DS_Store
 **syncthing**
+**sync-conflict**
 
 # VSCode settings
 .vscode/
