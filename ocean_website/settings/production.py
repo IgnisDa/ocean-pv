@@ -1,12 +1,12 @@
-# I have used a .env file and python-decouple in place of environment variables.
-# You can use that or just use development_settings.py
+# I use an .env file and ``python-decouple`` in place of environment variables.
+# You can use that, environment variables or just use development.py
 
 from decouple import config, Csv
 
 from .base import *  # NOQA
 
 DEBUG = config('DEBUG', cast=bool)
-DEBUG = True
+DEBUG = True  # FIXME: This line should be removed
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
@@ -27,3 +27,21 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 GOOGLE_RECAPTCHA_SECRET_KEY = config('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 GOOGLE_RECAPTCHA_SITE_KEY = config('GOOGLE_RECAPTCHA_SITE_KEY')
+
+DATABASE_NAME = config('DATABASE_NAME')
+
+DATABASE_USER = config('DATABASE_USER')
+
+DATABASE_PASSWORD = config('DATABASE_PASSWORD')
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': DATABASE_NAME,
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}

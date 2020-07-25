@@ -2,9 +2,16 @@
 OCEAN Personality Visualization
 *******************************
 
-.. image:: https://img.shields.io/github/license/IgnisDa/ocean-pv?style=for-the-badge   
+.. image:: https://img.shields.io/github/license/IgnisDa/ocean-pv
 	:alt: GitHub
 
+.. image:: https://img.shields.io/travis/com/IgnisDa/ocean-pv
+    :alt: Travis (.com)
+	
+.. image:: https://readthedocs.org/projects/ocean-pv/badge/?version=latest
+	:target: https://ocean-pv.readthedocs.io/en/latest/?badge=latest
+	:alt: Documentation Status
+	
 A website that helps you visualize your personality using graphs and compare it 
 with others. It asks you a
 series of questions and analyzes your inputs to create an easy to understand 
@@ -15,12 +22,6 @@ OCEAN_ personality model which is the most acceptable model to measure
 personality used by researchers. 
 
 .. _OCEAN: https://en.m.wikipedia.org/wiki/Big_Five_personality_traits 
-
-The Website
-===========
-.. todo::
-	
-	This is incomplete 
 
 Prerequisites
 =============
@@ -38,14 +39,14 @@ First, clone this project from Github_:
 	
 .. _Github: https://github.com/IgnisDa/ocean-pv/
 
-.. code:: console 
+.. code-block:: console 
 
 	$ git clone https://github.com/IgnisDa/OCEAN-personality-visualization.git
 
 The root directory contains a ``requirements.txt`` which can you can use to whip
 up a working environment. 
 
-.. code:: console
+.. code-block:: console
 
 	$ cd ocean-pv/
 	$ python -m venv env
@@ -55,13 +56,13 @@ up a working environment.
 If you use Poetry_ package manager to manage your dependencies, you can run the 
 following command in the project root. 
 
-.. code:: console 
+.. code-block:: console 
 
 	$ poetry install --no-dev
 
 To get the website up and running, you need to run the following:
 	
-.. code:: console
+.. code-block:: console
 
 	$ python manage.py makemigrations
 	$ python manage.py migrate
@@ -102,8 +103,8 @@ This was done because this project uses 4 different settings files for
 	When starting a development server, the project will look for an 
 	environment variable ``$OCEAN_PV``, and use that to decide which settings 
 	file to use. 
-	If ``$OCEAN_PV == "1"``, ``ocean_website/settings/production_settings.py`` 
-	will be used. Otherwise, ``ocean_website/settings/development_settings.py`` 
+	If ``$OCEAN_PV == "1"``, ``settings/production.py`` will be used.
+	Otherwise, ``settings/development.py`` 
 	is used by default. 
 
 .. _structure: https://django-project-skeleton.readthedocs.io/en/latest/structure.html

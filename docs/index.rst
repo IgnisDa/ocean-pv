@@ -3,6 +3,7 @@
    :maxdepth: 4
 
    starting
+   internals
    testing
    contributing
    authors

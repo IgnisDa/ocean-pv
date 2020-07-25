@@ -1,8 +1,6 @@
 from django.urls import reverse_lazy
 from django.contrib.auth import views as auth_views
 
-# TODO: Fix html_email_template.html
-
 
 class PasswordResetView(auth_views.PasswordResetView):
     success_url = reverse_lazy('users:password-reset-done')

@@ -2,11 +2,15 @@
 OCEAN Personality Visualization
 *******************************
 
-.. image:: https://img.shields.io/github/license/IgnisDa/ocean-pv?style=for-the-badge   
+.. image:: https://img.shields.io/github/license/IgnisDa/ocean-pv
 	:alt: GitHub
 
-.. image:: https://img.shields.io/travis/com/IgnisDa/ocean-pv?style=for-the-badge
+.. image:: https://img.shields.io/travis/com/IgnisDa/ocean-pv
     :alt: Travis (.com)
+
+.. image:: https://readthedocs.org/projects/ocean-pv/badge/?version=latest
+	:target: https://ocean-pv.readthedocs.io/en/latest/?badge=latest
+	:alt: Documentation Status
 
 A website to visualize your personality using graphs and compare it 
 with others. It asks you a
@@ -21,6 +25,9 @@ personality used by researchers.
 
 What this website does
 ======================
+
+Start to use the website
+========================
 
 First Steps
 -----------
@@ -54,7 +61,7 @@ against.
 
 Under the graph depicting your personality, you will find options to invite
 peers to this website using Whatsapp, Telegram, Facebook, email or Reddit. They will
-have to *Register* and then *Login* to attempt the test, using the referral
+have to **Register** and then **Login** to attempt the test, using the referral
 code that came with the message.
 
 .. image:: interactions/static/interactions/images/share_box.png

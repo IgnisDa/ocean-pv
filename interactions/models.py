@@ -1,10 +1,11 @@
 import json
 
 from django.db import models
+from django.contrib.postgres.fields import JSONField
 from users.models import UserProfile
 from django.urls import reverse
 
-from .validators import json_validator, percentage_validator
+from .validators import percentage_validator
 
 
 class BaseAnswerGroup(models.Model):
@@ -12,13 +13,13 @@ class BaseAnswerGroup(models.Model):
     answer_date_and_time = models. DateTimeField(auto_now_add=True)
     self_user_profile = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, related_name='%(class)s_self')
-    answers = models.JSONField(editable=False)
+    answers = JSONField(editable=False)
     accuracy = models.FloatField(
         null=True, blank=True,
         validators=[percentage_validator],
         editable=False
     )
-    scores = models.JSONField(editable=False)
+    scores = JSONField(editable=False)
 
     class Meta:
         abstract = True
@@ -109,11 +110,11 @@ class GlobalAverages(models.Model):
     """ Contains the global information about different attributes like
     which can be used for plotting graphs of global scope. """
 
-    openness = models.JSONField(editable=False)
-    conscientiousness = models.JSONField(editable=False)
-    extraversion = models.JSONField(editable=False)
-    agreeableness = models.JSONField(editable=False)
-    neuroticism = models.JSONField(editable=False)
+    openness = JSONField(editable=False)
+    conscientiousness = JSONField(editable=False)
+    extraversion = JSONField(editable=False)
+    agreeableness = JSONField(editable=False)
+    neuroticism = JSONField(editable=False)
     calculated_on = models.DateTimeField(
         auto_now=True, editable=False
     )

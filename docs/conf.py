@@ -17,7 +17,7 @@ html_theme = "sphinx_rtd_theme"
 
 # -- Project information -----------------------------------------------------
 
-project = 'OCEAN-personality-visualization'
+project = 'OCEAN Personality Visualization'
 copyright = '2020, IgnisDa'
 author = 'IgnisDa'
 
