@@ -1,5 +1,5 @@
 *******************************
-OCEAN-Personality-Visualization
+OCEAN Personality Visualization
 *******************************
 
 .. image:: https://img.shields.io/github/license/IgnisDa/ocean-pv?style=for-the-badge   
