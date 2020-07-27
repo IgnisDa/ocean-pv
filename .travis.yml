@@ -4,4 +4,6 @@ python:
 install:
   - pip install -r docs/requirements-dev.txt 
 script:
+  - python manage.py createdata
+  - python manage.py calculateglobals
   - pytest
