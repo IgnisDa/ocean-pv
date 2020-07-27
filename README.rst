@@ -32,7 +32,7 @@ Start using the website
 First Steps
 -----------
 
-After logging in (or signing up), you're guided to take a small
+After you *Register* and *Login*, you're guided to take a small
 test and asked some questions. Based on your answers, a graph is
 generated. This graph tell you where you stand according to the
 OCEAN_ personality model, along with a description of what each

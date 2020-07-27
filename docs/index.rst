@@ -3,7 +3,8 @@
    :maxdepth: 4
 
    starting
-   internals
+   apps
+   settings
    testing
    contributing
    authors
