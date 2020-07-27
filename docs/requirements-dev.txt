@@ -54,7 +54,8 @@ plotly==4.9.0
 pluggy==0.13.1
 prometheus-client==0.8.0
 prompt-toolkit==3.0.5
-ptyprocess==0.6.0; sys_platform != "win32" or os_name != "nt" or python_version >= "3.3" and sys_platform != "win32"
+psycopg2==2.8.5
+ptyprocess==0.6.0; python_version >= "3.3" and sys_platform != "win32" or sys_platform != "win32" or os_name != "nt" or python_version >= "3.3" and sys_platform != "win32" and (python_version >= "3.3" and sys_platform != "win32" or sys_platform != "win32")
 py==1.9.0
 pycodestyle==2.6.0
 pycparser==2.20
@@ -99,4 +100,5 @@ traitlets==4.3.3
 urllib3==1.25.9
 wcwidth==0.2.5
 webencodings==0.5.1
+whitenoise==5.1.0
 widgetsnbextension==3.5.1

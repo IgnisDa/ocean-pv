@@ -10,3 +10,10 @@ SECRET_KEY = '316b5cf48f099fb4e95f149c5e844d9a7632803cdc055d29056edcb82dfc8c10'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST_USER = 'ocean-pv_dev@email.com'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
