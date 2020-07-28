@@ -30,13 +30,13 @@ DATABASE_USER = os.environ.get('DATABASE_USER')
 
 DATABASE_PASSWORD = os.environ.get('DATABASE_PASSWORD')
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': DATABASE_NAME,
-        'USER': DATABASE_USER,
-        'PASSWORD': DATABASE_PASSWORD,
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': DATABASE_NAME,
+#         'USER': DATABASE_USER,
+#         'PASSWORD': DATABASE_PASSWORD,
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
