@@ -1,12 +1,10 @@
 import os
 
-import dj_database_url
-
 from .base import *  # NOQA
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com', '0.0.0.0']
+ALLOWED_HOSTS = ['.ocean-pv.herokuapp.com', '0.0.0.0']
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -27,8 +25,3 @@ GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
 GOOGLE_RECAPTCHA_SITE_KEY = os.environ.get('GOOGLE_RECAPTCHA_SITE_KEY')
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
-
-DATABASES = {}
-
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)

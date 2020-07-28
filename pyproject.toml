@@ -16,9 +16,7 @@ python-decouple = "^3.3"
 requests = "^2.23.0"
 argon2-cffi = "^20.1.0"
 django = "^3.0.8"
-psycopg2 = "^2.8.5"
 whitenoise = "^5.1.0"
-dj-database-url = "^0.5.0"
 
 
 [tool.poetry.dev-dependencies]
