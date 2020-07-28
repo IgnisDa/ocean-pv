@@ -4,4 +4,8 @@ python:
 install:
   - pip install -r docs/requirements-dev.txt 
 script:
+  - python manage.py migrate
+  - python manage.py noinputsuperuser --username testuser --password testpassword --noinput --email testemail@gmail.com
+  - python manage.py createdata testuser
+  - python manage.py calculateglobals
   - pytest
