@@ -16,11 +16,13 @@ def zip_lists(list1, list2):
         )
     return zip(list1, list2)
 
+
 @register.filter(name='truncate_name')
 def truncate_name(string, size):
-	""" Truncate an str whose length is greater than size,
-	and add ellipsis at the end. """
-	return f"{string[:size]}..."
+    """ Truncate an str whose length is greater than size,
+    and add ellipsis at the end. """
+    return f"{string[:size]}..."
+
 
 @register.filter(name='make_subsets')
 def make_subsets(data, size: int) -> list:
