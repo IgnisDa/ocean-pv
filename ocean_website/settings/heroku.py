@@ -1,5 +1,7 @@
 import os
 
+import dj_database_url
+
 from .base import *  # NOQA
 
 DEBUG = True
@@ -24,19 +26,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 GOOGLE_RECAPTCHA_SITE_KEY = os.environ.get('GOOGLE_RECAPTCHA_SITE_KEY')
 
-DATABASE_NAME = os.environ.get('DATABASE_NAME')
+DATABASE = os.environ.get('DATABASE')
 
-DATABASE_USER = os.environ.get('DATABASE_USER')
-
-DATABASE_PASSWORD = os.environ.get('DATABASE_PASSWORD')
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': DATABASE_NAME,
-#         'USER': DATABASE_USER,
-#         'PASSWORD': DATABASE_PASSWORD,
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
+DATABASES = {}
+DATABASES['default'] = dj_database_url.parse(DATABASE, conn_max_age=600)
