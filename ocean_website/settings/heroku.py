@@ -28,3 +28,7 @@ GOOGLE_RECAPTCHA_SITE_KEY = os.environ.get('GOOGLE_RECAPTCHA_SITE_KEY')
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
+DATABASES = {}
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
