@@ -11,7 +11,7 @@ from users.models import UserProfile
 class AnswerChoiceForm(forms.Form):
 
     CHOICES = (
-        # ('Invalid', '-'*25),  # FIXME: Remove option before deployment # DONE
+        ('Invalid', '-'*25),  # FIXME: Remove option before deployment # DONE
         (1, 'Disagree strongly'),
         (2, 'Disagree a little'),
         (3, 'Neither agree nor disagree'),
