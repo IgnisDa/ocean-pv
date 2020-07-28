@@ -4,7 +4,7 @@ import dj_database_url
 
 from .base import *  # NOQA
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', '0.0.0.0']
 
