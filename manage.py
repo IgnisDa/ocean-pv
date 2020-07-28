@@ -5,13 +5,8 @@ import sys
 
 
 def main():
-    OCEAN_PV = os.environ.get('OCEAN_PV', False)
-    if OCEAN_PV == "1":
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE',
-                              'ocean_website.settings.production')
-    else:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE',
-                              'ocean_website.settings.development')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+                              'ocean_website.settings.heroku')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
