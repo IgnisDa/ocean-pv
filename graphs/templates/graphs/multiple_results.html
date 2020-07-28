@@ -55,7 +55,7 @@
             {% else %}
             <div class="card mb-3 border-{% random_color %}">
                 <div class="card-header text-{% random_color %}">{{ dict.answer_group_pk }}:
-                    {{ dict.name|truncate_name:2 }}</div>
+                    {{ dict.name|truncate_name:12 }}</div>
                 <div class="card-body">
                     <p class="card-text text-{% random_color %}">Percentage difference: {{ dict.percentage }}%</p>
                 </div>
