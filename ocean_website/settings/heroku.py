@@ -26,7 +26,6 @@ GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 GOOGLE_RECAPTCHA_SITE_KEY = os.environ.get('GOOGLE_RECAPTCHA_SITE_KEY')
 
-DATABASE = os.environ.get('DATABASE')
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.parse(DATABASE, conn_max_age=600)
+DATABASES['default'] = dj_database_url.parse(DATABASE_URL, conn_max_age=600)
