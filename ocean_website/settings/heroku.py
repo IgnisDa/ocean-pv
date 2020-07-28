@@ -2,7 +2,7 @@ import os
 
 from .base import *  # NOQA
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com']
 
