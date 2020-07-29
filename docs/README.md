@@ -1,6 +1,4 @@
-*****************
-Building the Docs
-*****************
+# Building the Docs
 
 The documentation in this tree is in plain text files and can be viewed using any text file viewer.
 
