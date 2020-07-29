@@ -1,12 +1,10 @@
-# I use an .env file and ``python-decouple`` in place of environment variables.
-# You can use that, environment variables or just use development.py
+import os
 
 from decouple import config, Csv
 
 from .base import *  # NOQA
 
 DEBUG = config('DEBUG', cast=bool)
-DEBUG = True  # FIXME: This line should be removed
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
@@ -37,11 +35,7 @@ DATABASE_PASSWORD = config('DATABASE_PASSWORD')
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': DATABASE_NAME,
-        'USER': DATABASE_USER,
-        'PASSWORD': DATABASE_PASSWORD,
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
     }
 }

@@ -1,6 +1,8 @@
-********************
+.. _testing-label:
+
+####################
 Testing this project
-********************
+####################
 There is a ``requirements-dev.txt`` in ``docs/`` which will install all the dependencies required for testing this project. The tests are present in ``tests/*``. 
 
 .. code-block:: console
@@ -13,8 +15,10 @@ If you use Poetry_ package manager to manage your dependencies, you can instead 
 
 .. _Poetry: https://python-poetry.org/
 
+**********************
 How tests are arranged
-======================
+**********************
+
 Each app_ contains its own tests in the ``tests`` folder. These tests
 exclusively test their corresponding app. The ``tests/integration/`` 
 directory contains selenium_ tests that test the website itself. 
@@ -23,14 +27,17 @@ directory contains selenium_ tests that test the website itself.
 .. _selenium: https://pypi.org/project/selenium/
 .. _Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
 
+*****************
 Running the tests
-=================
+*****************
 A ``pytest.ini`` present in the root directory takes care of pointing to the correct settings.
 It also writes the test coverage in ``htmlcov/``. Simply run ``pytest`` in the root directory
 to get the tests underway. 
 
+****************
 Integrated tests
-================
+****************
+
 Since they take a lot longer to execute than unittests, they are
 disabled by default (in the ``pytest.ini`` file). 
 These tests are present in ``tests/integration/``. They use Chromedriver_ for testing.

@@ -1,8 +1,10 @@
 import json
 
 from django.db import models
-from django.contrib.postgres.fields import JSONField
-#from django.db.models import JSONField
+try:
+	from django.contrib.postgres.fields import JSONField
+except ImportError:
+	from django.db.models import JSONField
 from users.models import UserProfile
 from django.urls import reverse
 

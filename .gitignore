@@ -141,6 +141,7 @@ poetry.lock
 update-reqs
 temp-plot.html
 chromedriver
+mobile.py
 
 # Text backup files
 *.bak

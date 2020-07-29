@@ -4,8 +4,15 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+    if os.environ.get('DJANGO_DEV')=='True':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                               'ocean_website.settings.development')
+    elif os.environ.get('DJANGO_DEV')=='False':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+                              'ocean_website.settings.heroku')
+    else:
+    	os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+                              'ocean_website.settings.development_alt')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

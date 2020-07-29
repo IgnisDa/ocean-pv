@@ -1,6 +1,6 @@
-*******************************
+###############################
 OCEAN Personality Visualization
-*******************************
+###############################
 
 .. image:: https://img.shields.io/github/license/IgnisDa/ocean-pv
 	:alt: GitHub
@@ -23,8 +23,10 @@ personality used by researchers.
 
 .. _OCEAN: https://en.m.wikipedia.org/wiki/Big_Five_personality_traits 
 
+*************
 Prerequisites
-=============
+*************
+
 This website has been built using the Django_ framework, using Python_ 
 (version: 3.8), HTML_ (version: 5), 
 and other web-dev components. 
@@ -33,8 +35,10 @@ and other web-dev components.
 .. _Python: https://www.python.org
 .. _HTML: https://en.wikipedia.org/wiki/HTML
 
+**********
 Installing
-==========
+**********
+
 First, clone this project from Github_:
 	
 .. _Github: https://github.com/IgnisDa/ocean-pv/
@@ -75,15 +79,17 @@ You can then visit ``http://127.0.0.1:8000/`` in your browser to access the webs
 
 .. note::
 	
-	The project uses ``ocean_website/settings/development.py`` as the default.
-	If you want to use ``ocean_website/settings/production.py`` as 
+	The project uses ``ocean_website/settings/development_alt.py`` as the default.
+	If you want to use ``ocean_website/settings/development.py`` as 
 	the settings module, then rename ``.env.example`` to ``.env``
-	and fill it with correct information. Then add an environment variable 
-	using ``export $OCEAN_PV 1`` or change ``manage.py`` instead to point to 
-	the required settings. Alternatively, you can run ```OCEAN_PV=1 python manage.py runserver``.
-	
+	and fill it with correct information. Learn about the differences
+	between the different settings here: :ref:`settings-label`.
+
+
+*****************
 Project Structure
-=================
+*****************
+
 The project was created using the command ``django-admin startproject
 ocean_website`` and that is also the main directory where important files like
 ``settings.py`` and ``wsgi.py`` live. 
@@ -95,44 +101,44 @@ modifications. The apps that are part of the website are ``core``, ``graphs``, `
 Major modifications include changing the location of 
 ``ocean_website/settings.py`` to ``ocean_website/settings/base.py``. 
 This was done because this project uses 4 different settings files for 
-*development*, *testing*, *production* and *heroku*. The ``manage.py`` and 
+*development_alt*, *testing*, *development* and *heroku*. The ``manage.py`` and 
 ``wsgi.py`` files have been changed accordingly. 
 
 .. note:: 
 	 
 	When starting a development server, the project will look for an 
-	environment variable ``$OCEAN_PV``, and use that to decide which settings 
-	file to use. 
-	If ``$OCEAN_PV == "1"``, ``settings/production.py`` will be used.
-	Otherwise, ``settings/development.py`` 
-	is used by default. 
+	environment variable ``$DJANGO_DEV`` to decide which settings file to use. 
+	If ``$DJANGO_DEV == "True"``, ``settings/development.py`` will be used.
+	Otherwise, ``settings/development_alt.py`` is used by default. 
 
 .. _structure: https://django-project-skeleton.readthedocs.io/en/latest/structure.html
 
+*******
 Testing
-=======
+*******
+
 The project uses pytest_ and a plugin pytest-django_ as its standard test-runner.
-Read the full documentation on `testing the project`_
+Read the full documentation on :ref:`testing-label`. 
 
 .. _Poetry: https://python-poetry.org/
 .. _pytest-django: https://github.com/pytest-dev/pytest-django 
 .. _pytest: https://docs.pytest.org/en/latest/
-	
+
+************
 Contributing
-============
-Contributions are welcome! Read more at `contributing to the project`_
+************
+Contributions are welcome! Read more at :ref:`contributing-label`.
 
+*******
 Authors
-=======
+*******
+
 This project is maintained by the community. Read more at 
-`authors of this project`_.
+:ref:`authors-label`.
 
+*******
 License
-=======
-This project is licensed under the MIT License. Read more at 
-`licensing and legal`_.
+*******
 
-.. _licensing and legal: https://ocean-personality-visualization.readthedocs.io/en/latest/license.html
-.. _authors of this project: https://ocean-personality-visualization.readthedocs.io/en/latest/authors.html
-.. _contributing to the project: https://ocean-personality-visualization.readthedocs.io/en/latest/contributing.html
-.. _testing the project: https://ocean-personality-visualization.readthedocs.io/en/latest/testing.html
+This project is licensed under the MIT License. Read more at 
+:ref:`license-label`.

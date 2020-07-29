@@ -1,6 +1,8 @@
-*******
+.. _authors-label:
+
+#######
 Authors
-*******
+#######
 This project was conceived by IgnisDa_.
 Actively maintained and supported by `Fitz Watson`_. 
 

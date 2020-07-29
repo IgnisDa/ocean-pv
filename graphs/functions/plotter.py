@@ -68,21 +68,38 @@ def draw_comparison_plot(valid_dict: list) -> str:
     It is a bar graph and has is plotted with ``OCEAN_SUBCLASSES`` on x-axis
     and corresponding values on y-axis. """
 
+    actual_scores = list(valid_dict[0]['score'].values())
+    deviations = list(valid_dict[1]['deviation'].values())
+    guesses = list(valid_dict[1]['score'].values())
+
+    def deviation_percentage(score, guess):
+        deviation = guess-score
+        if deviation == 0:
+            return "Perfect!"
+        return f"{deviation}"
+
+    percentages = list(
+        deviation_percentage(score, guess) for
+        score, guess in zip(actual_scores, guesses)
+    )
+    print(actual_scores, guesses, percentages)
     fig = go.Figure()
     fig.add_trace(go.Bar(
         x=OCEAN_SUBCLASSES,
-        y=list(valid_dict[0]['score'].values()),
+        y=actual_scores,
         name='Their actual personality',
     ))
     fig.add_trace(go.Bar(
         x=OCEAN_SUBCLASSES,
-        y=list(valid_dict[1]['score'].values()),
+        y=guesses,
         name='Your guess',
     ))
     fig.add_trace(go.Bar(
         x=OCEAN_SUBCLASSES,
-        y=list(valid_dict[1]['deviation'].values()),
-        name='Deviation',
+        y=deviations,
+        name='Deviation with error percent',
+        text=percentages,
+        textposition='outside',
     ))
     fig.update_layout(barmode='group', showlegend=True)
 

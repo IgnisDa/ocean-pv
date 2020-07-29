@@ -32,7 +32,8 @@ Start using the website
 First Steps
 -----------
 
-After you *Register* and *Login*, you're guided to take a small
+After you *Register* and *Login*, click on *Get Started* to be
+guided to take a small
 test and asked some questions. Based on your answers, a graph is
 generated. This graph tell you where you stand according to the
 OCEAN_ personality model, along with a description of what each
@@ -61,7 +62,7 @@ against.
 
 Under the graph depicting your personality, you will find options to invite
 peers to this website using Whatsapp, Telegram, Facebook, email or Reddit. They will
-have to **Register** and then **Login** to attempt the test, using the referral
+have to *Register* and then *Login* to attempt the test, using the referral
 code that came with the message.
 
 .. image:: interactions/static/interactions/images/share_box.png
@@ -89,7 +90,7 @@ Sent here by a peer?
 
 So your peer has invited to show how well you know them? You are at the right
 place! Simply *Register* with us to get started. Once logged in, click on
-**Sent here by a peer?** on the homepage, and then enter the referral code
+*Sent here by a peer?* on the homepage, and then enter the referral code
 you received.
 
 .. image:: interactions/static/interactions/images/referral_text.png

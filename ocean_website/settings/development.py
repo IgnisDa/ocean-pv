@@ -1,19 +1,46 @@
+# I use an .env file and ``python-decouple`` in place of environment variables.
+# You can use that, environment variables or just use development.py
+
+from decouple import config, Csv
+
 from .base import *  # NOQA
 
+DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-DEBUG = True
+SECRET_KEY = config('SECRET_KEY')
 
-SECRET_KEY = '316b5cf48f099fb4e95f149c5e844d9a7632803cdc055d29056edcb82dfc8c10'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = config('EMAIL_HOST')
 
-EMAIL_HOST_USER = 'ocean-pv_dev@email.com'
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+GOOGLE_RECAPTCHA_SECRET_KEY = config('GOOGLE_RECAPTCHA_SECRET_KEY')
+
+GOOGLE_RECAPTCHA_SITE_KEY = config('GOOGLE_RECAPTCHA_SITE_KEY')
+
+DATABASE_NAME = config('DATABASE_NAME')
+
+DATABASE_USER = config('DATABASE_USER')
+
+DATABASE_PASSWORD = config('DATABASE_PASSWORD')
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': DATABASE_NAME,
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
