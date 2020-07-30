@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 
 from .forms import ContactForm
 from .functions import get_home_context
+from core.mixins import GoogleRecaptchaMixin
 
 
 class HomeView(TemplateView):
@@ -14,7 +15,7 @@ class ResourcesView(TemplateView):
     template_name = 'home/resources.html'
 
 
-class ContactView(FormView):
+class ContactView(GoogleRecaptchaMixin, FormView):
     template_name = 'home/contact.html'
     form_class = ContactForm
     success_url = reverse_lazy('home:contact-done')

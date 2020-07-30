@@ -26,8 +26,8 @@ class ContactForm(forms.Form):
         from_email = self.cleaned_data.get('from_email').strip()
         subject = self.cleaned_data.get('subject').strip()
         message = self.cleaned_data.get('message')
-        context = {'user_name': from_email, 'message':message,
-        'user': from_email, 'website_address': 'ocean-pv', 'subject': subject}
+        context = {'user_name': from_email, 'message': message,
+                   'user': from_email, 'website_address': 'ocean-pv', 'subject': subject}
         html_message = render_to_string('emails/contact.html', context)
 
         send_mail(

@@ -10,14 +10,13 @@ from django.conf import settings
 from users.forms import (
     RegistrationForm,
 )
-from core.decorators import check_recaptcha
+from core.mixins import GoogleRecaptchaMixin
 
 
-class UserRegistrationView(SuccessMessageMixin, CreateView):
+class UserRegistrationView(GoogleRecaptchaMixin, SuccessMessageMixin, CreateView):
     template_name = 'users/register.html'
     form_class = RegistrationForm
     success_message = 'You can now login with your new credentials'
-    extra_context = {'SITE_KEY': settings.GOOGLE_RECAPTCHA_SITE_KEY}
     success_url = reverse_lazy('users:login')
 
 

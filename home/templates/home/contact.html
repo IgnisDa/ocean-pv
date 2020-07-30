@@ -10,6 +10,9 @@
   <form method="POST">
     {% csrf_token %}
     {{ form|crispy }}
+    <div class="mb-4">
+    {% include 'includes/recaptcha.html' %}
+    </div>
     <div class="btn-toolbar">
       <button class="btn btn-success" type="submit">Submit </button>
     </div>

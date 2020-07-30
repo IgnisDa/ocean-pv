@@ -40,7 +40,9 @@
                         {% endfor %}
                     </tbody>
                 </table>
-
+<div class="mb-4">
+    {% include 'includes/recaptcha.html' %}
+    </div>
                 <div class="text-center">
                     <button href="{% url 'interactions:taketest' %}" class="btn-success btn-block" type="submit">Submit
                     </button>

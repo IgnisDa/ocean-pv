@@ -11,15 +11,17 @@ Register
 {% block body %}
 {% load crispy_forms_tags %}
 {% load widget_tweaks %}
-<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <form method="POST">
     {% csrf_token %}
     {{ form|crispy }}
-    <div class="g-recaptcha form-control mb-4" data-sitekey="{{ SITE_KEY }}"></div>
+    
+    <div class="form-control mb-4">
+    {% include 'includes/recaptcha.html' %}
+    </div>
     <div class="btn-toolbar">
         <button class="btn btn-info" type="submit">Sign Up</button>
-        <a href="{% url 'home:home' %}" class="btn btn-danger ml-auto">Homepage </a>
+        <a href="{% url 'home:home' %}" class="btn btn-danger ml-auto">Homepage</a>
     </div>
 </form>
 {% endblock %}

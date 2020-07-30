@@ -163,8 +163,7 @@ class Command(BaseCommand):
             self.stdout.write(
                 f'{index}: Created SelfAnswerGroup for ', ending='')
             self.stdout.write(self.style.SUCCESS(f"{profile}"))
-            
-            
+
         self.stdout.write('')
         for index, _ in enumerate(range(num_self), 1):
             profile = random.choice(new_users).profile
@@ -179,7 +178,6 @@ class Command(BaseCommand):
             self.stdout.write(
                 f'{index}: Created SelfAnswerGroup for ', ending='')
             self.stdout.write(self.style.SUCCESS(f"{profile}"))
-
 
         new_rel_answers = []
         self.stdout.write('')
@@ -204,7 +202,6 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS(
                 f"{relation_profile}"
             ))
-
 
         new_others_answers = []
         self.stdout.write('')

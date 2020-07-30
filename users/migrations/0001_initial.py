@@ -18,14 +18,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='UserProfile',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('user_bio', models.TextField(null=True)),
-                ('country', django_countries.fields.CountryField(blank=True, max_length=2, null=True)),
-                ('gender', models.CharField(choices=[('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')], max_length=140, null=True)),
+                ('country', django_countries.fields.CountryField(
+                    blank=True, max_length=2, null=True)),
+                ('gender', models.CharField(choices=[
+                 ('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')], max_length=140, null=True)),
                 ('birth_date', models.DateField(blank=True, null=True)),
                 ('visible', models.BooleanField(default=True)),
                 ('receive_emails', models.BooleanField(default=True)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='profile', to=settings.AUTH_USER_MODEL)),
+                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE,
+                                              related_name='profile', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'permissions': (('special_access', 'Can access the special page'),),
@@ -34,14 +38,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ProfileRelation',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('relation_name', models.CharField(max_length=100)),
-                ('user_profile_1', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='profile1', to='users.UserProfile')),
-                ('user_profile_2', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='profile2', to='users.UserProfile')),
+                ('user_profile_1', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, related_name='profile1', to='users.UserProfile')),
+                ('user_profile_2', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, related_name='profile2', to='users.UserProfile')),
             ],
         ),
         migrations.AddConstraint(
             model_name='profilerelation',
-            constraint=models.UniqueConstraint(fields=('user_profile_1', 'user_profile_2'), name='profile_relations'),
+            constraint=models.UniqueConstraint(
+                fields=('user_profile_1', 'user_profile_2'), name='profile_relations'),
         ),
     ]

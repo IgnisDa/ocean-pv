@@ -74,15 +74,16 @@ def draw_comparison_plot(valid_dict: list) -> str:
 
     def deviation_percentage(score, guess):
         deviation = guess-score
-        if deviation == 0:
-            return "Perfect!"
-        return f"{deviation}"
+        try:
+            percentage = f"{abs(round(deviation/score, 2))*100} %"
+        except ZeroDivisionError:
+            percentage = 'Major Error'
+        return percentage
 
     percentages = list(
         deviation_percentage(score, guess) for
         score, guess in zip(actual_scores, guesses)
     )
-    print(actual_scores, guesses, percentages)
     fig = go.Figure()
     fig.add_trace(go.Bar(
         x=OCEAN_SUBCLASSES,

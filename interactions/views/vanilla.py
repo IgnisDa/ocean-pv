@@ -20,7 +20,7 @@ from interactions.forms import (
     RelationSelectorForm, ReferralCodeForm,
     AnswerFormset
 )
-from core.mixins import CustomLoginRequiredMixin
+from core.mixins import CustomLoginRequiredMixin, GoogleRecaptchaMixin
 
 
 class HowtoView(TemplateView):
@@ -45,7 +45,10 @@ class View(PermissionRequiredMixin, TemplateView):
     extra_context = {'data': get_data_fn()}
 
 
-class BaseQuestionView(CustomLoginRequiredMixin, SuccessMessageMixin, FormView):
+class BaseQuestionView(
+    CustomLoginRequiredMixin, GoogleRecaptchaMixin,
+    SuccessMessageMixin, FormView
+):
     form_class = AnswerFormset
     answer_group_model = None
     questions = None

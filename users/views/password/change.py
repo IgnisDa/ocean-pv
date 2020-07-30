@@ -2,27 +2,13 @@ from django.shortcuts import (
     render,
     redirect,
 )
-from django.contrib.auth import authenticate, login,  update_session_auth_hash
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
-from django.urls import reverse_lazy
 from django.contrib import messages
 from django.urls import reverse
-from django.views.generic import UpdateView, DetailView, ListView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import views as auth_views
-from django.conf import settings
 
-from interactions.models import (
-    SelfAnswerGroup,
-    RelationAnswerGroup
-)
-from users.forms import (
-    RegistrationForm,
-    ProfileUpdateForm,
-    UserUpdateForm
-)
-from users.models import UserProfile
-from core.decorators import check_recaptcha
 from core.mixins import CustomLoginRequiredMixin
 
 
@@ -40,8 +26,6 @@ def password_change_view(request):
             messages.info(request, 'Please correct the errors below ')
     else:
         form = PasswordChangeForm(request.user)
-
-    print(form.as_p, request.POST)
     return render(request, 'users/password_change_form.html', {'form': form})
 
 

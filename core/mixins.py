@@ -1,5 +1,8 @@
+import requests
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+from django.conf import settings
 
 
 class CustomLoginRequiredMixin(LoginRequiredMixin):
@@ -37,3 +40,28 @@ class RequiredFieldsMixin:
             for key in self.fields:
                 if key in required_fields:
                     self.fields[key].required = True
+
+
+class GoogleRecaptchaMixin:
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['SITE_KEY'] = settings.GOOGLE_RECAPTCHA_SITE_KEY
+        return context
+
+    def post(self, request, *args, **kwargs):
+        request.recaptcha_is_valid = None
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        data = {
+            'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        r = requests.post(
+            'https://www.google.com/recaptcha/api/siteverify', data=data)
+        result = r.json()
+        if result['success']:
+            request.recaptcha_is_valid = True
+        else:
+            request.recaptcha_is_valid = False
+            messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+        return super().post(request, *args, **kwargs)
