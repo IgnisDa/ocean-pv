@@ -54,7 +54,7 @@ Once they have attempted the test, they will be presented with two graphs- the
 first one will be an overlay-graph showing their attempt against your actual
 personality, while the second one will be a bar-graph showing their accuracy.
 
-![comparison_graph.png](interactions/static/interactions/images/comparison_graph.png)
+![referral_graph.png](interactions/static/interactions/images/referral_graph_example.png)
 
 Additionally, you will also be notified by email about your peer's attempt to
 guess your personality (assuming you updated your email ID in your profile).
