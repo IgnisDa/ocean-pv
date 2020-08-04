@@ -1,13 +1,13 @@
 alabaster==0.7.12
 apipkg==1.5
-appnope==0.1.0; sys_platform == "darwin" or platform_system == "Darwin" or python_version >= "3.3" and sys_platform == "darwin"
+appnope==0.1.0; python_version >= "3.3" and sys_platform == "darwin" or platform_system == "Darwin"
 argon2-cffi==20.1.0
 asgiref==3.2.10
 atomicwrites==1.4.0; sys_platform == "win32"
 attrs==19.3.0
-autopep8==1.5.3
+autopep8==1.5.4
 babel==2.8.0
-backcall==0.2.0
+backcall==0.2.0; python_version >= "3.3"
 bleach==3.1.5
 certifi==2020.6.20
 cffi==1.14.1
@@ -17,7 +17,7 @@ coverage==5.2.1
 decorator==4.4.2
 defusedxml==0.6.0
 dj-database-url==0.5.0
-django==3.0.8
+django==3.1
 django-countries==6.1.2
 django-crispy-forms==1.9.2
 django-widget-tweaks==1.4.8
@@ -29,10 +29,10 @@ gunicorn==20.0.4
 idna==2.10
 imagesize==1.2.0
 ipykernel==5.3.4
-ipython==7.16.1
+ipython==7.17.0
 ipython-genutils==0.2.0
 ipywidgets==7.5.1
-jedi==0.17.2
+jedi==0.17.2; python_version >= "3.3"
 jinja2==2.11.2
 jsonschema==3.2.0
 jupyter==1.0.0
@@ -45,18 +45,18 @@ mistune==0.8.4
 more-itertools==8.4.0
 nbconvert==5.6.1
 nbformat==5.0.7
-notebook==6.0.3
+notebook==6.1.1
 packaging==20.4
 pandocfilters==1.4.2
-parso==0.7.1
-pexpect==4.8.0; python_version >= "3.3" and sys_platform != "win32" or sys_platform != "win32"
-pickleshare==0.7.5
+parso==0.7.1; python_version >= "3.3"
+pexpect==4.8.0; python_version >= "3.3" and sys_platform != "win32"
+pickleshare==0.7.5; python_version >= "3.3"
 plotly==4.9.0
 pluggy==0.13.1
 prometheus-client==0.8.0
 prompt-toolkit==3.0.5
 psycopg2==2.8.5
-ptyprocess==0.6.0; python_version >= "3.3" and sys_platform != "win32" or sys_platform != "win32" or os_name != "nt" or python_version >= "3.3" and sys_platform != "win32" and (python_version >= "3.3" and sys_platform != "win32" or sys_platform != "win32")
+ptyprocess==0.6.0; python_version >= "3.3" and sys_platform != "win32" or os_name != "nt"
 py==1.9.0
 pycodestyle==2.6.0
 pycparser==2.20
@@ -74,7 +74,7 @@ python-decouple==3.3
 pytz==2020.1
 pywin32==228; sys_platform == "win32"
 pywinpty==0.5.7; os_name == "nt"
-pyzmq==19.0.1
+pyzmq==19.0.2
 qtconsole==4.7.5
 qtpy==1.9.0
 requests==2.24.0

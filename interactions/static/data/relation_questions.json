@@ -1,1 +1,266 @@
-[{"subclass": "extraversion", "text": "They are full of energy", "factor": 1, "number": 1}, {"subclass": "agreeableness", "text": "They start quarrels with others", "factor": -1, "number": 2}, {"subclass": "neuroticism", "text": "They remain calm in tense situations", "factor": -1, "number": 3}, {"subclass": "openness", "text": "They are inventive", "factor": 1, "number": 4}, {"subclass": "agreeableness", "text": "They can be cold and aloof", "factor": -1, "number": 5}, {"subclass": "agreeableness", "text": "Are they generally trusting?", "factor": 1, "number": 6}, {"subclass": "conscientiousness", "text": "They are a reliable worker", "factor": 1, "number": 7}, {"subclass": "extraversion", "text": "They generate a lot of enthusiasm", "factor": 1, "number": 8}, {"subclass": "openness", "text": "They prefer work that is routine", "factor": -1, "number": 9}, {"subclass": "neuroticism", "text": "Can they be tense?", "factor": 1, "number": 10}, {"subclass": "conscientiousness", "text": "They are easily distracted", "factor": -1, "number": 11}, {"subclass": "conscientiousness", "text": "They make plans and follow through with them", "factor": 1, "number": 12}, {"subclass": "neuroticism", "text": "Do they worry a lot?", "factor": 1, "number": 13}, {"subclass": "neuroticism", "text": "Are they emotionally stable, and not easily upset?", "factor": -1, "number": 14}, {"subclass": "conscientiousness", "text": "They do things efficiently", "factor": 1, "number": 15}, {"subclass": "openness", "text": "They like to reflect, play with ideas", "factor": 1, "number": 16}, {"subclass": "extraversion", "text": "Do they tend to be quiet?", "factor": -1, "number": 17}, {"subclass": "agreeableness", "text": "Are they sometimes rude to others?", "factor": -1, "number": 18}, {"subclass": "conscientiousness", "text": "They tends to be lazy", "factor": -1, "number": 19}, {"subclass": "neuroticism", "text": "They can be moody", "factor": 1, "number": 20}, {"subclass": "extraversion", "text": "They are sometimes shy and inhibited", "factor": -1, "number": 21}, {"subclass": "neuroticism", "text": "They are depressed and blue", "factor": 1, "number": 22}, {"subclass": "openness", "text": "They are curious about many different things", "factor": 1, "number": 23}, {"subclass": "extraversion", "text": "They have an assertive personality", "factor": 1, "number": 24}, {"subclass": "agreeableness", "text": "They have a forgiving nature", "factor": 1, "number": 25}, {"subclass": "extraversion", "text": "They are outgoing and sociable", "factor": 1, "number": 26}, {"subclass": "agreeableness", "text": "Do they tend to find fault with others?", "factor": -1, "number": 27}, {"subclass": "agreeableness", "text": "Are they helpful and unselfish with others?", "factor": 1, "number": 28}, {"subclass": "openness", "text": "They have an active imagination", "factor": 1, "number": 29}, {"subclass": "agreeableness", "text": "They like to cooperate with others", "factor": 1, "number": 30}, {"subclass": "neuroticism", "text": "They can get nervous easily", "factor": 1, "number": 31}, {"subclass": "openness", "text": "They have few artistic interests", "factor": -1, "number": 32}, {"subclass": "openness", "text": "Are they sophisticated in art, music, or literature?", "factor": 1, "number": 33}, {"subclass": "openness", "text": "Are they original and come up with new ideas?", "factor": 1, "number": 34}, {"subclass": "extraversion", "text": "Are they reserved?", "factor": -1, "number": 35}, {"subclass": "extraversion", "text": "They are talkative", "factor": 1, "number": 36}, {"subclass": "neuroticism", "text": "They are relaxed and handle stress well", "factor": -1, "number": 37}, {"subclass": "agreeableness", "text": "Are they considerate and kind to almost everyone?", "factor": 1, "number": 38}, {"subclass": "conscientiousness", "text": "They do a thorough job", "factor": 1, "number": 39}, {"subclass": "conscientiousness", "text": "Do they persevere until the task is finished?", "factor": 1, "number": 40}, {"subclass": "openness", "text": "Are they ingenious and a deep thinker?", "factor": 1, "number": 41}, {"subclass": "conscientiousness", "text": "Can they be somewhat careless?", "factor": -1, "number": 42}, {"subclass": "openness", "text": "They value artistic and aesthetic experiences", "factor": 1, "number": 43}, {"subclass": "conscientiousness", "text": "Do they tend to be disorganized?", "factor": -1, "number": 44}]
+[
+    {
+        "subclass": "extraversion",
+        "text": "They are full of energy",
+        "factor": 1,
+        "number": 1
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "They start quarrels with others",
+        "factor": -1,
+        "number": 2
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "They remain calm in tense situations",
+        "factor": -1,
+        "number": 3
+    },
+    {
+        "subclass": "openness",
+        "text": "They are inventive",
+        "factor": 1,
+        "number": 4
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "They can be cold and aloof",
+        "factor": -1,
+        "number": 5
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Are they generally trusting?",
+        "factor": 1,
+        "number": 6
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "They are a reliable worker",
+        "factor": 1,
+        "number": 7
+    },
+    {
+        "subclass": "extraversion",
+        "text": "They generate a lot of enthusiasm",
+        "factor": 1,
+        "number": 8
+    },
+    {
+        "subclass": "openness",
+        "text": "They prefer work that is routine",
+        "factor": -1,
+        "number": 9
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Can they be tense?",
+        "factor": 1,
+        "number": 10
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "They are easily distracted",
+        "factor": -1,
+        "number": 11
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "They make plans and follow through with them",
+        "factor": 1,
+        "number": 12
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Do they worry a lot?",
+        "factor": 1,
+        "number": 13
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "Are they emotionally stable, and not easily upset?",
+        "factor": -1,
+        "number": 14
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "They do things efficiently",
+        "factor": 1,
+        "number": 15
+    },
+    {
+        "subclass": "openness",
+        "text": "They like to reflect, play with ideas",
+        "factor": 1,
+        "number": 16
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Do they tend to be quiet?",
+        "factor": -1,
+        "number": 17
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Are they sometimes rude to others?",
+        "factor": -1,
+        "number": 18
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "They tends to be lazy",
+        "factor": -1,
+        "number": 19
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "They can be moody",
+        "factor": 1,
+        "number": 20
+    },
+    {
+        "subclass": "extraversion",
+        "text": "They are sometimes shy and inhibited",
+        "factor": -1,
+        "number": 21
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "They are depressed and blue",
+        "factor": 1,
+        "number": 22
+    },
+    {
+        "subclass": "openness",
+        "text": "They are curious about many different things",
+        "factor": 1,
+        "number": 23
+    },
+    {
+        "subclass": "extraversion",
+        "text": "They have an assertive personality",
+        "factor": 1,
+        "number": 24
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "They have a forgiving nature",
+        "factor": 1,
+        "number": 25
+    },
+    {
+        "subclass": "extraversion",
+        "text": "They are outgoing and sociable",
+        "factor": 1,
+        "number": 26
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Do they tend to find fault with others?",
+        "factor": -1,
+        "number": 27
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Are they helpful and unselfish with others?",
+        "factor": 1,
+        "number": 28
+    },
+    {
+        "subclass": "openness",
+        "text": "They have an active imagination",
+        "factor": 1,
+        "number": 29
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "They like to cooperate with others",
+        "factor": 1,
+        "number": 30
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "They can get nervous easily",
+        "factor": 1,
+        "number": 31
+    },
+    {
+        "subclass": "openness",
+        "text": "They have few artistic interests",
+        "factor": -1,
+        "number": 32
+    },
+    {
+        "subclass": "openness",
+        "text": "Are they sophisticated in art, music, or literature?",
+        "factor": 1,
+        "number": 33
+    },
+    {
+        "subclass": "openness",
+        "text": "Are they original and come up with new ideas?",
+        "factor": 1,
+        "number": 34
+    },
+    {
+        "subclass": "extraversion",
+        "text": "Are they reserved?",
+        "factor": -1,
+        "number": 35
+    },
+    {
+        "subclass": "extraversion",
+        "text": "They are talkative",
+        "factor": 1,
+        "number": 36
+    },
+    {
+        "subclass": "neuroticism",
+        "text": "They are relaxed and handle stress well",
+        "factor": -1,
+        "number": 37
+    },
+    {
+        "subclass": "agreeableness",
+        "text": "Are they considerate and kind to almost everyone?",
+        "factor": 1,
+        "number": 38
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "They do a thorough job",
+        "factor": 1,
+        "number": 39
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Do they persevere until the task is finished?",
+        "factor": 1,
+        "number": 40
+    },
+    {
+        "subclass": "openness",
+        "text": "Are they ingenious and a deep thinker?",
+        "factor": 1,
+        "number": 41
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Can they be somewhat careless?",
+        "factor": -1,
+        "number": 42
+    },
+    {
+        "subclass": "openness",
+        "text": "They value artistic and aesthetic experiences",
+        "factor": 1,
+        "number": 43
+    },
+    {
+        "subclass": "conscientiousness",
+        "text": "Do they tend to be disorganized?",
+        "factor": -1,
+        "number": 44
+    }
+]
