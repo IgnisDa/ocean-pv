@@ -72,7 +72,7 @@ pytest-xdist==1.34.0
 python-dateutil==2.8.1
 python-decouple==3.3
 pytz==2020.1
-pywin32==228; sys_platform == "win32"
+pywin32==301; sys_platform == "win32"
 pywinpty==0.5.7; os_name == "nt"
 pyzmq==19.0.2
 qtconsole==4.7.5
