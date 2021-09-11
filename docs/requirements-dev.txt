@@ -57,7 +57,7 @@ prometheus-client==0.8.0
 prompt-toolkit==3.0.5
 psycopg2==2.8.5
 ptyprocess==0.6.0; python_version >= "3.3" and sys_platform != "win32" or os_name != "nt"
-py==1.9.0
+py==1.10.0
 pycodestyle==2.6.0
 pycparser==2.20
 pyflakes==2.2.0
