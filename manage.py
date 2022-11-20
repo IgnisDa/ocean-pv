@@ -9,7 +9,7 @@ def main():
                               'ocean_website.settings.development')
     elif os.environ.get('DJANGO_DEV') == 'False':
         os.environ.setdefault('DJANGO_SETTINGS_MODULE',
-                              'ocean_website.settings.heroku')
+                              'ocean_website.settings.prod')
     else:
         os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                               'ocean_website.settings.development_alt')

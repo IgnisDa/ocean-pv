@@ -6,7 +6,7 @@ from .base import *  # NOQA
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['.ocean-pv.herokuapp.com', '0.0.0.0']
+ALLOWED_HOSTS = ['.ocean-pv.ignisda.tech', '0.0.0.0']
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -26,7 +26,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 GOOGLE_RECAPTCHA_SITE_KEY = os.environ.get('GOOGLE_RECAPTCHA_SITE_KEY')
 
-DATABASE_URL = os.environ.get('DATABASE_URL')
+DATABASE_URL = os.environ.get('DATABASE_URL').encode()
 
 DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
 
