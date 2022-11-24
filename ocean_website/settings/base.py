@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     "widget_tweaks",
     "crispy_forms",
     "django_countries",
+    "plausible_proxy",
 ]
 
 
@@ -105,4 +106,10 @@ GOOGLE_RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
 
 GOOGLE_RECAPTCHA_SECRET_KEY = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
 
-STATTICFILES_STORAGE = "whitenoise.storage" ".CompressedManifestStaticFilesStorage"
+STATTICFILES_STORAGE = (
+    "whitenoise.storage" ".CompressedManifestStaticFilesStorage"
+)
+
+PLAUSIBLE_DOMAIN = "ocean-pv.ignisda.tech"
+
+PLAUSIBLE_BASE_URL = "https://plausible.ignisda.tech"

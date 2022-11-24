@@ -277,6 +277,18 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "django-plausible-proxy"
+version = "0.3.0"
+description = "Django module to proxy requests to Plausible Analytics."
+category = "main"
+optional = false
+python-versions = ">=3.7.8,<4.0.0"
+
+[package.dependencies]
+Django = ">=3.2"
+requests = ">=2,<3"
+
+[[package]]
 name = "django-widget-tweaks"
 version = "1.4.12"
 description = "Tweak the form field rendering in templates, not in python-level form definitions."
@@ -1632,7 +1644,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "c0f077a2040084d91c9e9af536c7528d53f58a2c8971d9730c5bfb65a5261d13"
+content-hash = "53f4e4f95f5748810d35f81581a92cc2beddb71cd3b29358a06e907b73cd0038"
 
 [metadata.files]
 alabaster = [
@@ -1879,6 +1891,10 @@ django-countries = [
 django-crispy-forms = [
     {file = "django-crispy-forms-1.14.0.tar.gz", hash = "sha256:35887b8851a931374dd697207a8f56c57a9c5cb9dbf0b9fa54314da5666cea5b"},
     {file = "django_crispy_forms-1.14.0-py3-none-any.whl", hash = "sha256:bc4d2037f6de602d39c0bc452ac3029d1f5d65e88458872cc4dbc01c3a400604"},
+]
+django-plausible-proxy = [
+    {file = "django-plausible-proxy-0.3.0.tar.gz", hash = "sha256:a780f609feb750f466bc4db08658733f68185ef648611777c8f9f0deef0b9008"},
+    {file = "django_plausible_proxy-0.3.0-py3-none-any.whl", hash = "sha256:74853c69dc6322cb555339189edd967ba75b4a84e51bf666304d41902975d3a7"},
 ]
 django-widget-tweaks = [
     {file = "django-widget-tweaks-1.4.12.tar.gz", hash = "sha256:9bfc5c705684754a83cc81da328b39ad1b80f32bd0f4340e2a810cbab4b0c00e"},
