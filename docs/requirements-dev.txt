@@ -9,7 +9,7 @@ autopep8==1.5.4
 babel==2.8.0
 backcall==0.2.0; python_version >= "3.3"
 bleach==3.3.0
-certifi==2020.6.20
+certifi==2022.12.7
 cffi==1.14.1
 chardet==3.0.4
 colorama==0.4.3; python_version >= "3.3" and sys_platform == "win32" or sys_platform == "win32"
