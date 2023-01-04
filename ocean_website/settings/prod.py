@@ -6,7 +6,10 @@ from .base import *  # NOQA
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['.ocean-pv.ignisda.tech', '0.0.0.0']
+ALLOWED_HOSTS =  ['0.0.0.0']
+allowed_hosts = os.environ.get("DJANGO_ALLOWED_HOSTS")
+if allowed_hosts:
+    ALLOWED_HOSTS += allowed_hosts.split(",")
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
