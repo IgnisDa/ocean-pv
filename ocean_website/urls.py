@@ -8,7 +8,6 @@ urlpatterns = [
     path("users/", include("users.urls")),
     path("interactions/", include("interactions.urls")),
     path("graphs/", include("graphs.urls")),
-    path("", include("plausible_proxy.urls")),
 ]
 
 if settings.DEBUG:
